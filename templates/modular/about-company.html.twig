@@ -7,6 +7,21 @@
 {% block render_block %}
 	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
 
+        <!-- Background img -->    
+        {% if module.img_top_left != null %}
+            <img class="img-top-left" src="{{ page.media[module.img_top_left].url() }}" />
+        {% endif %}
+
+        {% if module.img_top_right != null %}
+            <img class="img-top-right" src="{{ page.media[module.img_top_right].url() }}" />
+        {% endif %}
+
+         {% if module.img_bottom_right != null %}
+            <img class="img-bottom-right" src="{{ page.media[module.img_bottom_right].url() }}" />
+        {% endif %}
+
+        <!--End background img -->
+
 		<div class="container">
 
             <div class="contents-wrapper {{ module.child_classes }}">
@@ -70,9 +85,17 @@
 
                     </div>
 
-                    {% if image %}
+                    {% if image != null %}
                         <div class="image">
-                            <img src="{{ image.url }}" alt="About Company Image"/>
+                            {% if module.img_on_content != null %}  
+                                <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}" />
+                            {% endif %}
+
+                            <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+
+                            {% if module.overlay_image != null %}  
+                                <img class="overlay-image" src="{{ page.media[module.overlay_image].url() }}" />
+                            {% endif %}
                         </div>
                     {% endif %}
                 </div>
@@ -80,5 +103,6 @@
             </div>
 		
 		</div>
+
 	</div>
 {% endblock %}

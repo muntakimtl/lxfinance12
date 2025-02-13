@@ -1984,6 +1984,33 @@ label.error {
   width: 100%;
 }
 
+.about-company-wrapper {
+  position: relative;
+}
+.about-company-wrapper .img-top-left,
+.about-company-wrapper .img-top-right,
+.about-company-wrapper .img-bottom-right {
+  position: absolute;
+}
+.about-company-wrapper .img-top-left {
+  top: 3%;
+  left: -40px;
+  animation: rotateFull 10s linear 0s infinite forwards;
+}
+.about-company-wrapper .img-top-right {
+  top: 0;
+  right: -40px;
+  animation: scale 10s linear 0s infinite forwards;
+}
+.about-company-wrapper .img-bottom-right {
+  bottom: 0;
+  right: 0px;
+  animation: scale 10s linear 0s infinite forwards;
+}
+.about-company-wrapper .img-bottom-right {
+  bottom: 0;
+  right: 0px;
+}
 .about-company-wrapper .contents-wrapper {
   padding: 5rem 0;
 }
@@ -2015,7 +2042,6 @@ label.error {
 }
 .about-company-wrapper .contents-wrapper .header-content h4 {
   color: var(--color-about-company-sub-title);
-  position: relative;
   display: inline;
   line-height: 28px; /* 155.556% */
   font-size: 1.125rem;
@@ -2031,15 +2057,6 @@ label.error {
     font-weight: 600;
   }
 }
-.about-company-wrapper .contents-wrapper .header-content h4::before {
-  content: " ";
-  position: absolute;
-  height: 3px;
-  width: 20px;
-  left: -38px;
-  top: 50%;
-  background: var(--color-about-company-sub-title);
-}
 .about-company-wrapper .contents-wrapper .text_left {
   flex-direction: row;
 }
@@ -2053,7 +2070,7 @@ label.error {
 }
 @media (max-width: 1024px) {
   .about-company-wrapper .contents-wrapper .text_right {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 .about-company-wrapper .contents-wrapper .company-contents {
@@ -2169,11 +2186,59 @@ label.error {
 .about-company-wrapper .contents-wrapper .company-contents .image {
   flex-basis: 50%;
   text-align: center;
+  position: relative;
+  z-index: -1;
 }
-.about-company-wrapper .contents-wrapper .company-contents .image img {
+.about-company-wrapper .contents-wrapper .company-contents .image .main-img {
   width: 100%;
 }
+.about-company-wrapper .contents-wrapper .company-contents .image .img-on-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  animation: rotateFull 5s linear 0s infinite forwards;
+}
 
+/* ------------ Unique Design and animation for same module ---------------*/
+.about-company-in-home-page .img-top-left {
+  animation: scale 10s linear 0s infinite forwards !important;
+}
+.about-company-in-home-page .image .main-img {
+  width: 60% !important;
+}
+@media (max-width: 1024px) {
+  .about-company-in-home-page .image .main-img {
+    position: static;
+  }
+}
+.about-company-in-home-page .image .overlay-image {
+  position: absolute;
+  top: 30%;
+  right: -35%;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: movementUpDown 10s linear 0s infinite forwards;
+}
+@media (max-width: 1024px) {
+  .about-company-in-home-page .image .overlay-image {
+    position: static;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+  }
+}
+
+.about-company-in-about-page-text-right .img-top-left {
+  animation: scale 5s linear 0s infinite forwards !important;
+  left: 3%;
+}
+
+.about-company-in-about-page-text-left .img-on-content {
+  animation: scale 3s linear 0s infinite forwards !important;
+}
+
+/* ------------ End Unique Design and animation for same module ---------------*/
 .cheeseburger-menu {
   display: none;
 }
@@ -4727,6 +4792,58 @@ ol:not(.breadcrumb), ul:not(.breadcrumb) {
   height: 60rem;
   background: transparent;
   animation: slideIn 2.5s ease-in-out forwards;
+}
+
+/* ============  Scale ============ */
+@keyframes scale {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+/* ============ End Scale ============ */
+/* ============  Scale ============ */
+@keyframes rotateFull {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ============ End Scale ============ */
+@keyframes movementUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes movementLeftRight {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateX(70px);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

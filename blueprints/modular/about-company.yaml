@@ -61,6 +61,34 @@ form:
               type: pagemediaselect
               label: Image
               preview_images: true
+            header.contents.overlay_image:
+              type: pagemediaselect
+              label: Overlay Image On Main Image
+              preview_images: true
+
+            header.contents.img_top_left:
+              type: pagemediaselect
+              label: Image Top Left (BG)
+              preview_images: true
+              help: Background Image
+
+            header.contents.img_top_right:
+              type: pagemediaselect
+              label: Image Top Right (BG)
+              preview_images: true
+              help: Background Image
+
+            header.contents.img_bottom_right:
+              type: pagemediaselect
+              label: Image Bottom Right (BG)
+              preview_images: true
+              help: Background Image
+
+            header.contents.img_on_content:
+              type: pagemediaselect
+              label: Image On Content
+              preview_images: true
+              help: This image will show over the main image top-right position
 
             header.contents.buttons:
               type: list

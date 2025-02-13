@@ -1,4 +1,34 @@
   .about-company-wrapper{
+    position: relative;
+
+    .img-top-left,
+    .img-top-right,
+    .img-bottom-right {
+      position: absolute;
+    }
+
+    .img-top-left{
+      top: 3%;
+      left: -40px;
+      animation: rotateFull 10s linear 0s infinite forwards;
+    }
+
+    .img-top-right{
+      top: 0;
+      right: -40px;
+      animation: scale 10s linear 0s infinite forwards;
+    }
+
+    .img-bottom-right{
+      bottom: 0;
+      right: 0px;
+      animation: scale 10s linear 0s infinite forwards;
+    }
+
+    .img-bottom-right{
+      bottom: 0;
+      right: 0px;
+    }
 
     .contents-wrapper{
       padding: 5rem 0;
@@ -12,7 +42,6 @@
 
         h3 {
           @include typography(display-lg, bold);
-          
           @include desktop-small {
             @include typography(display-md, bold);
           }
@@ -24,7 +53,6 @@
 
         h4{
           color: var(--color-about-company-sub-title);
-          position: relative;
           display: inline;
           line-height: 28px; /* 155.556% */
           @include typography(text-lg, semibold);
@@ -33,15 +61,7 @@
           }
         }
 
-        h4::before{
-          content: " ";
-          position: absolute;
-          height: 3px;
-          width: 20px;
-          left: -38px;
-          top: 50%;
-          background: var(--color-about-company-sub-title);
-        }
+        
       }
 
       .text_left{
@@ -56,7 +76,7 @@
         flex-direction: row-reverse;
 
         @include desktop-small {
-          flex-direction: column-reverse;
+          flex-direction: column;
         }
       } 
 
@@ -175,12 +195,68 @@
         .image{
           flex-basis: 50%;
           text-align: center;
+          position: relative;
+          z-index: -1;
 
-          img{
-            width: 100%;
-            
+          .main-img{
+            width: 100%;           
+          }
+
+          .img-on-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            animation: rotateFull 5s linear 0s infinite forwards;
           }
         }
       }
     }
 }
+/* ------------ Unique Design and animation for same module ---------------*/
+.about-company-in-home-page {
+
+  .img-top-left {
+    animation: scale 10s linear 0s infinite forwards !important;
+  }
+
+  .image {
+    .main-img {
+      width: 60% !important;
+
+      @include desktop-small {
+        position: static;
+      }
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 30%;
+      right: -35%;
+      z-index: 1;
+      transform: translateY(-50%);
+      animation: movementUpDown 10s linear 0s infinite forwards;
+
+      @include desktop-small {
+        position: static;
+        bottom: 0%;
+        right: 0%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.about-company-in-about-page-text-right {
+  .img-top-left {
+    animation: scale 5s linear 0s infinite forwards !important;
+    left: 3%;
+  }
+}
+
+.about-company-in-about-page-text-left {
+  .img-on-content {
+    animation: scale 3s linear 0s infinite forwards !important;
+  }
+}
+/* ------------ End Unique Design and animation for same module ---------------*/
