@@ -1595,15 +1595,6 @@ label.error {
     flex-direction: column;
   }
 }
-.features .features-container .feature-slider-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-.features .features-container .feature-track {
-  display: flex;
-  gap: 1.5rem;
-  transition: transform 0.5s ease-in-out;
-}
 .features .features-container .feature-slider-controls {
   display: flex;
   justify-content: space-between;
@@ -1639,7 +1630,18 @@ label.error {
 .features .features-container .feature-slider-controls .control-right {
   right: 20px;
 }
-.features .features-container .feature {
+.features .features-container .feature-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.features .features-container .feature-slider-wrapper .feature-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 8px;
+}
+.features .features-container .feature-slider-wrapper .feature-track .feature {
   flex: 0 0 calc(33.3333333333% - 1rem);
   display: flex;
   align-items: flex-start;
@@ -1650,21 +1652,21 @@ label.error {
   opacity: 0;
   transition: transform 0.3s ease;
 }
-.features .features-container .feature:hover .feature-image img {
+.features .features-container .feature-slider-wrapper .feature-track .feature:hover .feature-image img {
   transform: scale(1.05);
 }
 @media (max-width: 1024px) {
-  .features .features-container .feature {
+  .features .features-container .feature-slider-wrapper .feature-track .feature {
     width: 100%;
     flex: 0 0 calc(50% - 1rem);
   }
 }
 @media (max-width: 768px) {
-  .features .features-container .feature {
+  .features .features-container .feature-slider-wrapper .feature-track .feature {
     flex: 0 0 100%;
   }
 }
-.features .features-container .feature .feature-container {
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1672,26 +1674,26 @@ label.error {
   position: relative;
 }
 @media (max-width: 1024px) {
-  .features .features-container .feature .feature-container {
+  .features .features-container .feature-slider-wrapper .feature-track .feature .feature-container {
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
 }
-.features .features-container .feature .feature-container .feature-image {
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-image {
   overflow: hidden;
   border-radius: 8px;
 }
 @media (max-width: 1024px) {
-  .features .features-container .feature .feature-container .feature-image {
+  .features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-image {
     width: 100%;
   }
 }
-.features .features-container .feature .feature-container .feature-image img {
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-image img {
   width: 100%;
   height: 100%;
 }
-.features .features-container .feature .feature-container .feature-content {
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-content {
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -1704,7 +1706,12 @@ label.error {
   bottom: 30px;
   width: 100%;
 }
-.features .features-container .feature .feature-container .feature-content .feature-title {
+@media (max-width: 1024px) {
+  .features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-content {
+    padding: 1.5rem;
+  }
+}
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-content .feature-title {
   font-size: 1.875rem;
   line-height: 2.375rem;
   letter-spacing: normal;
@@ -1712,7 +1719,7 @@ label.error {
   line-height: 38px;
   color: var(--feature-text);
 }
-.features .features-container .feature .feature-container .feature-content .feature-description {
+.features .features-container .feature-slider-wrapper .feature-track .feature .feature-container .feature-content .feature-description {
   font-size: 1.125rem;
   line-height: 1.75rem;
   letter-spacing: normal;

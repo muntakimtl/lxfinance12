@@ -70,17 +70,6 @@
       flex-direction: column;
     }
 
-    .feature-slider-wrapper {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .feature-track {
-      display: flex;
-      gap: 1.5rem;
-      transition: transform 0.5s ease-in-out;
-    }
-
     .feature-slider-controls {
       @include tablet{
         display: none;
@@ -123,79 +112,96 @@
       }
     }
 
-    .feature {
-      flex: 0 0 calc(100% / 3 - 1rem);
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      cursor: pointer;
+    .feature-slider-wrapper {
+      width: 100%;
+      overflow: hidden;
       border-radius: 8px;
-      align-self: stretch;
-      opacity: 0;
-      transition: transform 0.3s ease;
 
-      &:hover .feature-image img {
-        transform: scale(1.05);
-      }
-
-      @include desktop-small {
-        width: 100%;
-        flex: 0 0 calc(100% / 2 - 1rem);
-      }
-
-      @include tablet {
-        flex: 0 0 100%;
-      }
-
-      .feature-container {
+      .feature-track {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-self: stretch;
-        position: relative;
+        gap: 1.5rem;
+        transition: transform 0.5s ease-in-out;
+        border-radius: 8px;
 
-        @include desktop-small {
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-        }
-
-        .feature-image {
-          overflow: hidden;
+        .feature {
+          flex: 0 0 calc(100% / 3 - 1rem);
+          display: flex;
+          align-items: flex-start;
+          gap: 1.5rem;
+          cursor: pointer;
           border-radius: 8px;
+          align-self: stretch;
+          opacity: 0;
+          transition: transform 0.3s ease;
+
+          &:hover .feature-image img {
+            transform: scale(1.05);
+          }
 
           @include desktop-small {
             width: 100%;
+            flex: 0 0 calc(100% / 2 - 1rem);
           }
 
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .feature-content {
-          padding: 1.5rem 1rem;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          position: absolute;
-          left: 0;
-          bottom: 30px;
-          width: 100%;
-
-          .feature-title {
-            @include typography(display-sm, bold);
-            line-height: 38px;
-            color: var(--feature-text);
+          @include tablet {
+            flex: 0 0 100%;
           }
 
-          .feature-description {
-            @include typography(text-lg, normal);
-            color: var(--feature-text);
+          .feature-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            position: relative;
+
+            @include desktop-small {
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+            }
+
+            .feature-image {
+              overflow: hidden;
+              border-radius: 8px;
+
+              @include desktop-small {
+                width: 100%;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .feature-content {
+              padding: 1.5rem 1rem;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              position: absolute;
+              left: 0;
+              bottom: 30px;
+              width: 100%;
+
+              @include desktop-small{
+                padding: 1.5rem;
+              }
+
+              .feature-title {
+                @include typography(display-sm, bold);
+                line-height: 38px;
+                color: var(--feature-text);
+              }
+
+              .feature-description {
+                @include typography(text-lg, normal);
+                color: var(--feature-text);
+              }
+            }
           }
         }
       }
