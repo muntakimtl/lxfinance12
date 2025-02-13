@@ -35,20 +35,7 @@
     // margin-top: $content-bottom-margin;
   }
 
-  .form-data.rememberme {
-    margin-top: 15px;
-    text-align: left;
-    width: 50%;
 
-    @include mobile{
-      width: 100%;
-    }
-
-    label {
-      display: inline-block;
-      color: var(--login-text);
-    }
-  }
 
   input[type="checkbox"] {
     width: auto;
@@ -135,4 +122,60 @@
   }
 }
   }
+}
+
+
+.login-section{
+  background-color: var(--login-bg-container);
+  padding-top: 6.25rem;
+  margin: 0;
+  border-radius: 8px 8px 0px 0px;
+
+  @include whq-card-form(
+          $text-color: var(--unsubscribe-text),
+          $title-bg: var(--unsubscribe-bg),
+          $title-color: var(--unsubscribe-title),
+          $card-shadow: (0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)),
+          $border-radius: 0,
+          $spacing: 6.25rem,
+          $title_typography: (size: display-xs, weight: semibold),
+          $button_typography: (size: text-md, weight: semibold),
+          $label_typography: (size: text-md, weight: semibold),
+          $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
+  );
+.form-actions{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  .form-data.rememberme {
+    margin-top: 15px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    @include mobile{
+      width: 100%;
+    }
+
+    .form-input-wrapper{
+      display: flex;
+      align-items: center;
+      input[type="checkbox"] {
+        width: auto;
+        appearance: auto;
+        display: inline-block;
+      }
+      label {
+        color: var(--login-text);
+        margin-left: 8px;
+      }
+    }
+
+    .forgot-password{
+      @include typography(text-sm,semibold);
+      color: var(--login-text);
+      text-decoration: none;
+    }
+  }
+}
 }
