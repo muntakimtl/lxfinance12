@@ -12,6 +12,7 @@
 
         h3 {
           @include typography(display-lg, bold);
+          
           @include desktop-small {
             @include typography(display-md, bold);
           }
@@ -43,17 +44,31 @@
         }
       }
 
+      .text_left{
+        flex-direction: row;
+
+        @include desktop-small {
+          flex-direction: column-reverse;
+        }
+      
+      }
+      .text_right {
+        flex-direction: row-reverse;
+
+        @include desktop-small {
+          flex-direction: column-reverse;
+        }
+      } 
+
       .company-contents{
         display: flex;
         align-items: center;
         gap: 3rem;
         padding-top: 4rem;
         @include padding(padding-lg);
-        flex-direction: row-reverse;
         justify-content: space-between;
 
         @include desktop-small {
-          flex-direction: column-reverse;
           padding: 4rem 1rem 0;
           justify-content: center;
         }
@@ -61,6 +76,75 @@
         .contents{
           flex-basis: 50%;
           color: var(--text-text);
+
+          .content-title {
+            padding-bottom: 42px;
+          }
+          /*------ Random icon------*/
+          .random-icon-list-group { 
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+
+            .list-item {
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+             
+              .list-header {
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+
+                .title {
+                  color: var(--color-primary);
+                  @include typography('display-sm', bold);
+                }
+              }
+
+              .list-content {
+                p {
+                  @include typography('text-xl', regular);
+                }
+              }
+            }
+          }
+
+          /*------End Random icon------*/
+
+          /*------ Same icon------*/
+          .same-icon-list-group { 
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .list-item {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+             
+              .list-header {
+                display: flex;
+                gap: 1.125rem;
+                align-items: center;
+
+                .title {
+                  color: var(--color-primary);
+                  @include typography('display-xs', bold);
+                }
+              }
+
+              .list-content {
+                p {
+                  @include typography('text-xl', regular);
+                }
+              }
+            }
+          }
+
+          /*------End same icon------*/
+
+          
 
           .button {
             align-self: flex-start;
@@ -89,7 +173,7 @@
         }
 
         .image{
-          flex-basis: 40%;
+          flex-basis: 50%;
           text-align: center;
 
           img{
