@@ -3,36 +3,45 @@
 {% set module = page.header.module %}
 
 {% block render_block %}
-	<div class="features feature-animation">
-		<div class="features-header-section container">
-			{% if module.subtitle %}
-				<h4>
-					{# <svg xmlns="http://www.w3.org/2000/svg" width="21" height="4" viewBox="0 0 21 4" fill="none">
-						<path d="M2 2L19 2" stroke="#58D5BA" stroke-width="3" stroke-linecap="round"/>
-					</svg> #}
-					<span>{{ module.subtitle.translatable }}</span>
-				</h4>
-			{% endif %}
-
-			{% if module.title %}
-				<h3 class="block-title">{{ module.title.translatable }}</h3>
-			{% endif %}
-
-			{% if module.description %}
-				<p>{{ module.description.translatable }}</p>
-			{% endif %}
-		</div>
-
-		<div class="features-container container">
-			{% for feature_block in page.header.feature_blocks %}
-				{% if feature_block.description != '' and feature_block.title != '' %}
-					{% if module.pattern == 'horizontal' %}
-						{% include 'widgets/horizontal-feature.html.twig' with {feature_block: feature_block, module:module } %}
-					{% else %}
-						{% include 'widgets/vertical-feature.html.twig' with {feature_block: feature_block, module:module } %}
-					{% endif %}
+    <div class="features feature-animation">
+        <div class="container">
+			<div class="features-header-section">
+				{% if module.title %}
+					<h3 class="block-title">{{ module.title.translatable }}</h3>
 				{% endif %}
-			{% endfor %}
-		</div>
-	</div>
+
+				{% if page.content %}
+					<div class="features-section-description">
+						{{ page.content|raw }}
+					</div>
+				{% endif %}
+			</div>
+        </div>
+
+        <div class="features-container container">
+            <div class="feature-slider-controls">
+                <div class="control-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                        <path d="M0.47752 9.28658C0.0888729 9.67523 0.0888729 10.3246 0.47752 10.7142L9.44497 19.7047C9.8386 20.0983 10.477 20.0983 10.8696 19.7047C11.2632 19.311 11.2632 18.6717 10.8696 18.278L2.6145 9.99993L10.8706 1.72283C11.2642 1.3282 11.2642 0.689838 10.8706 0.295211C10.477 -0.0984196 9.83861 -0.0984196 9.44597 0.295211L0.47752 9.28658Z" fill="#191B1F"/>
+                    </svg>
+                </div>
+                <div class="control-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
+                        <path d="M10.874 9.28658C11.2627 9.67523 11.2627 10.3246 10.874 10.7142L1.90659 19.7047C1.51296 20.0983 0.874597 20.0983 0.481963 19.7047C0.0883332 19.311 0.0883332 18.6717 0.481963 18.278L8.73706 9.99993L0.480967 1.72283C0.0873374 1.3282 0.0873374 0.689838 0.480967 0.295211C0.874597 -0.0984196 1.51296 -0.0984196 1.90559 0.295211L10.874 9.28658Z" fill="#191B1F"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="feature-slider-wrapper">
+                <div class="feature-track">
+                    {% for feature_block in page.header.feature_blocks %}
+                        {% if feature_block.description != '' and feature_block.title != '' %}
+                            {% include 'widgets/vertical-feature.html.twig' with {feature_block: feature_block, module:module } %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="feature-slider-pagination"></div>
+    </div>
 {% endblock %}

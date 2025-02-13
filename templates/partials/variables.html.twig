@@ -5,3 +5,116 @@
 {% block render_block %}{% endblock %}
 
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const track = document.querySelector(".feature-track");
+        const items = document.querySelectorAll(".feature");
+        const totalItems = items.length;
+        let visibleItems = getVisibleItems(); // Dynamically get visible items count
+        let currentIndex = 0;
+
+        const paginationContainer = document.querySelector(".feature-slider-pagination");
+        let autoSlideTimer;
+
+        let autoSlideEnabled = true; // Set to false to disable auto-slide
+        let autoSlideInterval = 3000; // Auto-slide time in milliseconds (3 sec)
+
+        function getVisibleItems() {
+            if (window.innerWidth <= 768) return 1; // Mobile: 1 visible
+            if (window.innerWidth <= 1024) return 2; // Tablet: 2 visible
+            return 3; // Default Desktop: 3 visible
+        }
+
+        function updateSliderPosition() {
+            let itemWidth = items[0].offsetWidth + 24; // Adjust for gap
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            updateBullets();
+        }
+
+        function nextSlide() {
+            if (currentIndex >= totalItems - visibleItems) {
+                currentIndex = 0; // Loop back to start
+            } else {
+                currentIndex++;
+            }
+            updateSliderPosition();
+        }
+
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                currentIndex = totalItems - visibleItems; // Loop to the end
+            } else {
+                currentIndex--;
+            }
+            updateSliderPosition();
+        }
+
+        function generateBullets() {
+            paginationContainer.innerHTML = ""; // Clear existing bullets
+            let totalHiddenItems = totalItems - visibleItems;
+
+            for (let i = 0; i <= totalHiddenItems; i++) {
+                let bullet = document.createElement("div");
+                bullet.classList.add("bullet");
+                if (i === currentIndex) bullet.classList.add("active"); // Active bullet
+                bullet.setAttribute("data-index", i);
+                bullet.addEventListener("click", function () {
+                    currentIndex = i;
+                    updateSliderPosition();
+                    restartAutoSlide(); // Restart auto-slide after clicking
+                });
+                paginationContainer.appendChild(bullet);
+            }
+        }
+
+        function updateBullets() {
+            let bullets = document.querySelectorAll(".bullet");
+            bullets.forEach((bullet, index) => {
+                bullet.classList.toggle("active", index === currentIndex);
+            });
+        }
+
+        // 🚀 Auto-Slide Functionality
+        function startAutoSlide() {
+            if (autoSlideEnabled) {
+                autoSlideTimer = setInterval(nextSlide, autoSlideInterval);
+            }
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideTimer);
+        }
+
+        function restartAutoSlide() {
+            stopAutoSlide();
+            setTimeout(startAutoSlide, 5000); // Restart auto-slide after 5 sec of inactivity
+        }
+
+        // Attach event listeners to controls
+        document.querySelector(".control-left").addEventListener("click", function () {
+            prevSlide();
+            restartAutoSlide();
+        });
+
+        document.querySelector(".control-right").addEventListener("click", function () {
+            nextSlide();
+            restartAutoSlide();
+        });
+
+        // Pause auto-slide on hover
+        document.querySelector(".features-container").addEventListener("mouseenter", stopAutoSlide);
+        document.querySelector(".features-container").addEventListener("mouseleave", startAutoSlide);
+
+        // Regenerate bullets when resizing window
+        window.addEventListener("resize", function () {
+            visibleItems = getVisibleItems();
+            generateBullets();
+            updateSliderPosition();
+        });
+
+        // Initial Setup
+        generateBullets();
+        startAutoSlide();
+    });
+</script>
