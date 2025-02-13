@@ -10,9 +10,13 @@
   padding-top: $content-bottom-margin;
   background: var(--order-bg-container);
 
+  @include desktop-small {
+    margin: 0 1rem;
+  }
+
 
   table {
-    margin: 20px;
+    margin: 20px auto;
     border-collapse: separate;
     overflow: hidden;
     border-radius: 8px;
@@ -26,9 +30,11 @@
     }
 
     thead th {
-      background-color: #F9FAFB !important;
+      background-color: #F2F4F7 !important;
       color: var(--color-black);
       border-right: 1px solid #EAECF0;
+      border-bottom: 1px solid #EAECF0;
+      @include typography(text-xs, medium);
     }
 
     th, td {
@@ -42,6 +48,11 @@
     tbody td {
       border-top: 1px solid #EAECF0;
       border-right: 1px solid #EAECF0;
+      @include typography(text-sm, medium);
+
+      @include desktop-small {
+        white-space: nowrap;
+      }
     }
 
     td:nth-of-type(5) {
