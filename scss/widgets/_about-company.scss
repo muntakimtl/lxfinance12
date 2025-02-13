@@ -1,7 +1,5 @@
   .about-company-wrapper{
 
-    background: var(--text-bg-container);
-
     .contents-wrapper{
       padding: 5rem 0;
 
@@ -53,7 +51,6 @@
         @include padding(padding-lg);
         flex-direction: row-reverse;
         justify-content: space-between;
-        background-color: var(--text-bg);
 
         @include desktop-small {
           flex-direction: column-reverse;

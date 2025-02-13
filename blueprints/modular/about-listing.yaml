@@ -23,7 +23,6 @@ form:
               type: text
               
             header.about_sections_section:
-              # ordering@: 4
               type: section
               title: Contents List
               underline: true

@@ -10,20 +10,20 @@ form:
           title: Content
 
           fields:
-            header.contents.title.translatable:
+            header.contents.header_title.translatable:
               type: text
-              label: Title
-              classes: 'translatable' # Corrected typo in "classes"
+              label: Header Title
+              classes: 'translatable'
+
+            header.contents.content_title_title.translatable:
+              type: text
+              label: Content Title
+              classes: 'translatable'
             
             header.contents.subtitle.translatable:
               type: text
               label: Sub-title
-              classes: 'translatable' # Corrected typo here as well
-
-            header.contents.another.translatable:
-              type: text
-              label: another
-              classes: 'translatable' # Corrected typo here as well
+              classes: 'translatable'
             
             header.contents.parent_classes:
               label: Parent Classes
@@ -34,10 +34,19 @@ form:
               label: Child Classes
               type: text
               help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
+            
+            header.text_left.classes_for_content_title:
+              label: Classes for Content Title
+              type: select
+              options:
+                content_title_large_font_size: "Large"
+                content_title_small_font_size: "Small"
+              default: "content_title_small_font_size"
 
             header.contents.image:
               type: pagemediaselect
               label: Image
+              preview_images: true
 
             header.contents.buttons:
               type: list
@@ -51,6 +60,22 @@ form:
                 .link:
                   type: text
                   label: Button Link
+
+            header.about_sections_section:
+              type: section
+              title: Contents List
+              underline: true
+              label: true
+              fields:
+                header.about_sections:
+                  type: list
+                  fields:
+                    .title:
+                      type: text
+                      label: Title
+                    .brief:
+                      type: textarea
+                      label: Brief
 
             header.media_order:
               ordering@: 99

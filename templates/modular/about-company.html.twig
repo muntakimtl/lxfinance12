@@ -1,0 +1,36 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set image = page.media[page.header.contents.image] %}
+
+{% block render_block %}
+	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
+		<div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="header-content">
+                    {% if module.subtitle %}
+                        <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                    {% endif %}
+                    <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                </div>
+
+                <div class="company-contents">
+                    <div class="contents">
+                        <h3>{{ module.content_title.translatable|striptags('<span>')|raw }} test</h3>
+                        <p>{{ page.content|raw }}</p>
+                    </div>
+
+                    {% if image %}
+                        <div class="image">
+                            <img src="{{ image.url }}" alt="About Company Image"/>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+		
+		</div>
+	</div>
+{% endblock %}
