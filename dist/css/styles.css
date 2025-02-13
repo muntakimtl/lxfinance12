@@ -2731,16 +2731,16 @@ label.error {
   box-shadow: 0px 10px 24px rgba(16, 24, 40, 0.08), 0px -10px 24px rgba(16, 24, 40, 0.08), 10px 0px 24px rgba(16, 24, 40, 0.08), -10px 0px 24px rgba(16, 24, 40, 0.08), 0px 5px 15px rgba(16, 24, 40, 0.03), 0px -5px 15px rgba(16, 24, 40, 0.03), 5px 0px 15px rgba(16, 24, 40, 0.03), -5px 0px 15px rgba(16, 24, 40, 0.03);
 }
 .contact-block-section .contact-block-wrapper .contact-block-content-parent .contact-block-content-area .contact-block-item:nth-child(1) {
-  animation-delay: 1s;
+  animation-delay: 0s;
 }
 .contact-block-section .contact-block-wrapper .contact-block-content-parent .contact-block-content-area .contact-block-item:nth-child(2) {
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 .contact-block-section .contact-block-wrapper .contact-block-content-parent .contact-block-content-area .contact-block-item:nth-child(3) {
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 .contact-block-section .contact-block-wrapper .contact-block-content-parent .contact-block-content-area .contact-block-item:nth-child(4) {
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 @media (max-width: 564px) {
   .contact-block-section .contact-block-wrapper .contact-block-content-parent .contact-block-content-area .contact-block-item {
