@@ -1,0 +1,10 @@
+streams:
+ schemes:
+   theme:
+     type: ReadOnlyStream
+     prefixes:
+       '':
+         - 'environment://themes/lexiorm08'
+         - 'user://themes/metricalo-base'
+
+enabled: true
