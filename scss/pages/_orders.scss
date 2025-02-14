@@ -9,24 +9,29 @@
   padding-bottom: $content-bottom-margin;
   padding-top: $content-bottom-margin;
   background: var(--order-bg-container);
+  width: 100%;
   
 
   @include desktop-small {
     margin: 0 1rem;
+    width: unset;
   }
 
 
   table {
-    margin: 20px auto;
+    margin: 20px 2rem;
     border-collapse: separate;
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid #EAECF0;
     box-shadow: 0px 1px 3px 0px #1018281A, 0px 1px 2px 0px #1018280F;
+    width: calc(100% - 4rem);
 
     @media all and (max-width: 918px) {
       display: block;
       overflow-x: scroll;
+      margin: 20px 0rem;
+      width: unset;
     }
 
     thead th {
