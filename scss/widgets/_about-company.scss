@@ -256,8 +256,10 @@
 }
 
 .about-company-in-about-page-text-left {
-  .img-top-left {
-    display: none !important;
+  @include desktop-small {
+    .img-top-left {
+      display: none !important;
+    }
   }
   .img-bottom-right {
     bottom: -5% !important;
