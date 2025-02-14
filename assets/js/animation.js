@@ -31,6 +31,8 @@ if (!window.myScriptLoaded) {
                     entry.target.classList.add('animate-about-listing');
                 } else if (entry.target.classList.contains('courses-animation')) {
                     entry.target.classList.add('animate-courses');
+                }else if (entry.target.classList.contains('offer')) {
+                    entry.target.classList.add('animate-offer');
                 }
 
 
@@ -51,6 +53,14 @@ if (!window.myScriptLoaded) {
 
 // Observe each element to trigger the animation
     slideUpElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+// Get all elements with the offer class
+const offerElements = document.querySelectorAll('.offer');
+
+// Observe each element to trigger the animation
+    offerElements.forEach((element) => {
         observer.observe(element);
     });
 
