@@ -1,32 +1,32 @@
-{% set body_classes = "page-login"%}
+{% set body_classes = "page-login" %}
 {% extends 'partials/base.html.twig' %}
 
 {% block article %}
-{#    <div class="login">#}
-{#        <div class="container login-container">#}
-{#            <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 login-page-content wrapper bg-light angled upper-end slide-up main-container">#}
-{#                <div class="form-login-wrapper">#}
-{#                    {% include 'partials/notifications.html.twig' %}#}
-{#                    {% include 'partials/messages.html.twig' %}#}
-{#                    {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}#}
-{#                </div>#}
-{#            </article>#}
-{#        </div>#}
-{#    </div>#}
+  {#    <div class="login"> #}
+  {#        <div class="container login-container"> #}
+  {#            <article class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 login-page-content wrapper bg-light angled upper-end slide-up main-container"> #}
+  {#                <div class="form-login-wrapper"> #}
+  {#                    {% include 'partials/notifications.html.twig' %} #}
+  {#                    {% include 'partials/messages.html.twig' %} #}
+  {#                    {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %} #}
+  {#                </div> #}
+  {#            </article> #}
+  {#        </div> #}
+  {#    </div> #}
 
-<div class="login-section">
+  <div class="login-section">
     <div class="container ">
-        {% embed "widgets/whq-card.html.twig" %}
-            {% block card_title %}
-                {{ "METRICALO.LOGIN"|t }}
-            {% endblock %}
+      {% embed "widgets/whq-card.html.twig" %}
+        {% block card_title %}
+          {{ "METRICALO.LOGIN"|t }}
+        {% endblock %}
 
-            {% block card_content %}
-                {% include 'partials/notifications.html.twig' %}
-                {% include 'partials/messages.html.twig' %}
-                {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}
-            {% endblock %}
-        {% endembed %}
+        {% block card_content %}
+          {% include 'partials/notifications.html.twig' %}
+          {% include 'partials/messages.html.twig' %}
+          {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}
+        {% endblock %}
+      {% endembed %}
     </div>
-    <div>
+  </div>
 {% endblock %}
