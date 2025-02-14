@@ -89,19 +89,11 @@ form:
               label: Image On Content
               preview_images: true
               help: This image will show over the main image top-right position
-
-            header.contents.buttons:
-              type: list
-              label: Buttons
-              style: vertical
-              fields:
-                .text.translatable:
-                  type: text
-                  label: Button Text
-                  classes: 'translatable'
-                .link:
-                  type: text
-                  label: Button Link
+            
+            header.contents.button_text.translatable:
+              type: text
+              label: Button Text
+              classes: 'translatable'
 
             header.about_company_content_section:
               type: section

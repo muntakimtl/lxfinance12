@@ -469,16 +469,6 @@ h6 span {
   overflow: hidden;
   z-index: 1;
 }
-.button::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-button);
-  z-index: -2;
-}
 .button::before {
   content: "";
   position: absolute;
@@ -486,12 +476,12 @@ h6 span {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #2C2F36;
+  background-color: var(--color-secondary);
   transition: all 0.3s;
   z-index: -1;
 }
 .button:hover {
-  color: var(--color-button);
+  color: var(--color-white) !important;
 }
 .button:hover::before {
   width: 100%;
@@ -1993,7 +1983,7 @@ label.error {
   position: absolute;
 }
 .about-company-wrapper .img-top-left {
-  top: 3%;
+  top: 2%;
   left: -40px;
   animation: rotateFull 10s linear 0s infinite forwards;
 }
@@ -2070,7 +2060,7 @@ label.error {
 }
 @media (max-width: 1024px) {
   .about-company-wrapper .contents-wrapper .text_right {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 .about-company-wrapper .contents-wrapper .company-contents {
@@ -2159,17 +2149,20 @@ label.error {
   align-self: flex-start;
   display: flex;
   align-items: center;
-  border-radius: 0px 18px;
   border: 1px solid var(--color-primary);
   padding: 16px 28px;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
   letter-spacing: normal;
-  font-weight: 600;
-  background: var(--color-primary);
-  color: var(--color-hero-button);
+  font-weight: 700;
+  background: var(--color-white) !important;
+  color: var(--color-primary);
   width: fit-content;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
 }
 .about-company-wrapper .contents-wrapper .company-contents .contents p, .about-company-wrapper .contents-wrapper .company-contents .contents li {
   font-size: 1.125rem;
@@ -2234,7 +2227,16 @@ label.error {
   left: 3%;
 }
 
+.about-company-in-about-page-text-left .img-top-left {
+  display: none !important;
+}
+.about-company-in-about-page-text-left .img-bottom-right {
+  bottom: -5% !important;
+  right: -5% !important;
+}
 .about-company-in-about-page-text-left .img-on-content {
+  top: 6% !important;
+  right: 9% !important;
   animation: scale 3s linear 0s infinite forwards !important;
 }
 

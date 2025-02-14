@@ -95,17 +95,6 @@ h6 span {
   overflow: hidden; 
   z-index: 1;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-button); 
-    z-index: -2;
-  }
-
   &::before {
     content: '';
     position: absolute;
@@ -113,14 +102,14 @@ h6 span {
     left: 0;
     width: 0%; 
     height: 100%;
-    background-color: #2C2F36; 
+    background-color: var(--color-secondary); 
     // background-color: #000;
     transition: all 0.3s; 
     z-index: -1; 
   }
 
   &:hover {
-    color: var(--color-button); 
+    color: var(--color-white) !important; 
   }
   
   &:hover::before {

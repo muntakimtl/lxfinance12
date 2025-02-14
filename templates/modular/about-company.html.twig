@@ -2,7 +2,7 @@
 
 {% set module = page.header.contents %}
 {% set features = page.header.about_company_features %}
-{% set image = page.media[page.header.contents.image] %}
+{% set image = page.media[module.image] %}
 
 {% block render_block %}
 	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
@@ -83,6 +83,15 @@
 
                         {% endif %}
 
+                         <!-- Button -->
+
+                        {% if module.button_text.translatable != null %}
+                            <a href="{{ url(grav.language.getActive ~ '/contact') }}" class="button about-company-btn">
+                                {{ module.button_text.translatable }}
+                            </a>
+                        {% endif %}
+
+                       
                     </div>
 
                     {% if image != null %}
@@ -98,6 +107,8 @@
                             {% endif %}
                         </div>
                     {% endif %}
+
+                    
                 </div>
 
             </div>
