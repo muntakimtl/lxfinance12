@@ -49,14 +49,6 @@ form:
               type: text
               help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
             
-            header.contents.classes_for_content_title:
-              label: Classes for Content Title
-              type: select
-              options:
-                content_title_large_font_size: "Large"
-                content_title_small_font_size: "Small"
-              default: "content_title_small_font_size"
-
             header.contents.image:
               type: pagemediaselect
               label: Image
