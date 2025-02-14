@@ -1,0 +1,119 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.contents %}
+{% set features = page.header.about_company_features %}
+{% set image = page.media[module.image] %}
+
+{% block render_block %}
+	<div class="about-company-wrapper slide-up {{ module.parent_classes }}">
+
+        <!-- Background img -->    
+        {% if module.img_top_left != null %}
+            <img class="img-top-left" src="{{ page.media[module.img_top_left].url() }}" />
+        {% endif %}
+
+        {% if module.img_top_right != null %}
+            <img class="img-top-right" src="{{ page.media[module.img_top_right].url() }}" />
+        {% endif %}
+
+         {% if module.img_bottom_right != null %}
+            <img class="img-bottom-right" src="{{ page.media[module.img_bottom_right].url() }}" />
+        {% endif %}
+
+        <!--End background img -->
+
+		<div class="container">
+
+            <div class="contents-wrapper {{ module.child_classes }}">
+
+                <div class="header-content">
+                    {% if module.subtitle != null %}
+                        <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                    {% endif %}
+
+                    {% if module.header_title != null %}
+                        <h3>{{ module.header_title.translatable|striptags('<span>')|raw }}</h3>
+                    {% endif %}
+                </div>
+
+                <div class="company-contents {{ module.direction }}">
+                    <div class="contents">
+                        {% if module.content_title != null %}
+                            <h3 class="content-title">{{ module.content_title.translatable|striptags('<span>')|raw }}</h3>
+                        {% endif %}
+
+                        {% if features != null %}
+
+                            {% if module.icon_style == 'random_icon' %}
+
+                                <div class="random-icon-list-group">
+                                    {% for item in features %}
+                                        <div class="list-item random-{{loop.index}} {{module.classes_for_content_title}}">
+
+                                            <div class="list-header">
+                                                <img class="list-img" src="{{ page.media[item.icon].url() }}" alt="Icon"/>
+                                                <h4 class="title {{module.classes_for_content_title}}">{{ item.title.translatable|raw }}</h4>
+                                            </div>
+
+                                            <div class="list-content">
+                                                <p>{{ item.brief.translatable|raw }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                
+                                </div>
+
+                            {% else %}
+                                <div class="same-icon-list-group">
+                                    {% for item in features %}
+                                        <div class="list-item random-{{loop.index}} {{module.classes_for_content_title}}">
+
+                                            <div class="list-header">
+                                                <img class="list-img" src="{{ page.media[item.icon].url() }}" alt="Icon"/>
+                                                <h4 class="title {{module.classes_for_content_title}}">{{ item.title.translatable|raw }}</h4>
+                                            </div>
+
+                                            <div class="list-content">
+                                                <p>{{ item.brief.translatable|raw }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                        {% endif %}
+
+                         <!-- Button -->
+
+                        {% if module.button_text.translatable != null %}
+                            <a href="{{ url(grav.language.getActive ~ '/contact') }}" class="button about-company-btn">
+                                {{ module.button_text.translatable }}
+                            </a>
+                        {% endif %}
+
+                       
+                    </div>
+
+                    {% if image != null %}
+                        <div class="image">
+                            {% if module.img_on_content != null %}  
+                                <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}" />
+                            {% endif %}
+
+                            <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+
+                            {% if module.overlay_image != null %}  
+                                <img class="overlay-image" src="{{ page.media[module.overlay_image].url() }}" />
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    
+                </div>
+
+            </div>
+		
+		</div>
+
+	</div>
+{% endblock %}

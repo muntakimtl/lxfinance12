@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'variables';
 @import 'mixins/responsiveness';
 @import 'mixins/interactions/index';
@@ -43,14 +43,6 @@
 	max-width: 1280px;
 	margin: 0 auto;
 	width: 100%;
-
-	// @include desktop-small {
-	// 	width: auto;
-	// }
-
-	// @include mobile {
-	// 	width: auto;
-	// }
 }
 
 
@@ -421,3 +413,57 @@ ol, ul {
 	}
   
 }
+
+/* ============  Scale ============ */
+@keyframes scale {
+	0% {
+		transform: scale(0.5);
+	}
+	50% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0.5);
+	}
+}
+/* ============ End Scale ============ */
+
+/* ============  Scale ============ */
+@keyframes rotateFull {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/* ============ End Scale ============ */
+@keyframes movementUpDown{
+    0% {
+      transform: translateY(0);
+    }
+	50% {
+		transform: translateY(40px);
+	  }
+    100% {
+		transform: translateY(0px);
+    }
+  }
+
+  @keyframes movementLeftRight{
+    0% {
+		transform: translateY(0);
+	  }
+	  25% {
+		  transform: translateX(70px);
+		}
+	  50% {
+		  transform: rotate(180deg);
+	  }
+	  75% {
+		  transform: translateY(30px);
+	  }
+	  100% {
+		transform: translateX(40px);
+	  }
+  }
