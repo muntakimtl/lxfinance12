@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'variables';
 @import 'mixins/responsiveness';
 @import 'mixins/interactions/index';
@@ -11,6 +11,8 @@
 @import 'widgets/languages';
 @import 'widgets/features';
 @import 'widgets/courses';
+@import 'widgets/stepper-horizontal';
+@import 'widgets/offer';
 @import 'widgets/advivus-courses';
 @import 'widgets/about-listing';
 @import 'widgets/about-company';
@@ -401,23 +403,4 @@ ol, ul {
     
 }
 
-.no-hero-header .paragraph.no-hero .no-hero-title-wrapper,
-.hero{
-	position: relative;
-	overflow: hidden;
-  
-	::before{
-	  position: absolute;
-	  content: "";
-	  box-shadow: 0 0 100px 40px #ffffff08;
-	  top: -100%;
-	  left: -100%;
-	  transform: rotate(-45deg);
-	  height: 60rem;
-	  // width: 30rem;
-	  // transition: .7s all;
-	  background: transparent;
-	  animation: slideIn 2.5s ease-in-out forwards;
-	}
-  
-}
+

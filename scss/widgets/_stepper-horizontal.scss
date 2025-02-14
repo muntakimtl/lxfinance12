@@ -1,0 +1,322 @@
+@keyframes step-wheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes step_triangle {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+
+  }
+  50% {
+    transform: scale(1.04) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+
+  }
+}
+
+
+@keyframes step-dots {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.steppers {
+  padding: 5rem 0;
+
+  @include desktop-small{
+    padding: 4rem 0;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    align-self: stretch;
+    position: relative;
+    @include padding(padding-lg);
+
+    .triangle{
+      position: absolute;
+      left: 0%;
+      top: -3%;
+      z-index: -1;
+      animation: step_triangle 1.5s infinite ease-in-out;
+      
+
+      @include desktop-small {
+        left: -3%;
+        top: -8%;
+      }
+
+      @include mobile {
+        left: -18%;
+        top: -5%;
+      }
+    }
+
+    .circle{
+      position: absolute;
+      left: 0%;
+      bottom: -30%;
+      z-index: 10;
+
+      animation: step-wheel 6s linear infinite;
+
+      @include desktop-small {
+        display: none;
+      }
+    }
+
+    .four_dots{
+      position: absolute;
+      right: 0%;
+      top: 20%;
+      z-index: -1;
+
+      @include desktop-small {
+        right: 2%;
+        top: 15%;
+      }
+      @include mobile {
+        right: 3%;
+        top: 23%;
+      }
+
+    }
+
+    @include desktop-small{
+      @include padding(padding-sm);
+      gap: 2.625rem;
+    }
+
+  
+    .steppers-header-section {
+      text-align: center;
+      width: 69%;
+      position: relative;
+  
+      @include desktop-small {
+        width: 100%;
+      }
+  
+     
+  
+      .block-title {
+        margin-bottom: 18px;
+        @include typography(display-lg, bold);
+        // opacity: 0;
+        color: var(--color-section-title);
+  
+        @include desktop-small {
+          @include typography(display-md, bold);
+        }
+      }
+  
+      p{
+        @include typography(text-xl, regular);
+        color: var(--color-section-title);
+      }
+  
+    }
+  
+    .steppers-container {
+      display: flex;
+      margin-top: 28px;
+      justify-content: center;
+      align-items: center;
+      gap: 1.125rem;
+      position: relative;
+
+  
+      @include desktop-small {
+        gap: 3.125rem;
+        flex-direction: column;
+        // background-image: unset;
+      }
+
+      .step_line{
+        position: absolute;
+        left: 0;
+        top: 13%;
+        z-index: -1;
+        width: 100%;
+
+        path {
+          stroke-dasharray: 20 20;  
+          stroke-dashoffset: 200; 
+          animation: step_draw_line 3s linear infinite;
+        }
+
+
+        @include desktop-small{
+          display: none;
+        }
+      }
+
+      .stepper {
+        display: flex;
+        flex-direction: column;
+        // padding: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        gap: 2.063rem;
+        flex-shrink: 0;
+        cursor: pointer;
+        background: transparent;
+        transition: all 0.3s ease-in-out;
+        flex: 40%;
+        // width: 36%;
+        align-self: stretch;
+        color: var(--feature-text);
+
+        @include desktop-small{
+          align-items: flex-start;
+          gap: 1.125rem;
+        }
+  
+  
+        &:nth-child(odd){
+          margin-top: 70px;
+          gap: 3.125rem;
+
+          @include desktop-small{
+            margin-top: 0;
+            gap: 2.063rem;
+          }
+    
+        }
+  
+        $icon-size: 104px;
+        .steps_icon{
+          width: $icon-size;
+          height: $icon-size;
+          overflow: hidden;
+          // border: 8px solid #F5FBFF;
+          background: var(--color-primary);
+          padding: 24px;
+          border-radius: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s ease-in-out; 
+  
+          .icon {
+            width: 100%;
+            object-fit: cover;
+          }
+  
+        }
+  
+        .steps_content{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          gap: 1.125rem;
+          cursor: pointer;
+          align-self: stretch;
+          color: var(--color-text-dark);
+
+          @include desktop-small{
+            align-items: flex-start;
+            text-align: left;
+          }
+  
+          .stepper-title{
+            @include typography(display-sm, bold);
+      
+          }
+  
+         .stepper-description{
+          @include typography(text-xl, regular);
+  
+         }
+  
+        }
+
+        &:hover {
+          .steps_icon {
+            animation: Step_icon_bounce 0.5s ease-in-out; 
+          }
+        }
+  
+      }
+
+  
+    }
+  }
+
+ 
+}
+
+
+@keyframes Step_icon_bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+@keyframes traffic-light {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+
+.four_dots .dot {
+  animation: traffic-light 4s infinite ease-in-out;
+}
+
+.four_dots .dot-1 {
+  animation-delay: 0s; 
+}
+
+.four_dots .dot-2 {
+  animation-delay: 1s; 
+}
+
+.four_dots .dot-3 {
+  animation-delay: 2s; 
+}
+
+.four_dots .dot-4 {
+  animation-delay: 3s; 
+}
+
+
+@keyframes step_draw_line {
+  from {
+    stroke-dashoffset: 200; 
+  }
+  to {
+    stroke-dashoffset: 0; 
+  }
+}

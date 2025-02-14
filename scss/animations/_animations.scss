@@ -55,7 +55,7 @@
   }
   .feature {
     opacity: 0;
-    @include feature-animation-5($delay: 0.5s);
+    @include feature-animation-6($delay: 0.5s);
     // no. of cards -> 2x2 3x2 
     
   }
@@ -164,8 +164,25 @@ input, textarea {
 
 
 
-
-
+.animate-offer{
+  .offer-text{
+    .offer-title {
+      opacity: 0;
+      animation: fadeInUp100 2s ease 0.3s forwards; 
+    }
+  
+    p {
+      opacity: 0;
+      animation: fadeInUp100 1s ease calc(0.1s + 0.3s) forwards;
+    }
+  
+    .button {
+      opacity: 0;
+      animation: zoomIn 1s ease calc(0.7s + 0.3s) forwards; 
+    }
+  }
+  
+}
 
 
 
