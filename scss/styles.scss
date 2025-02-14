@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'mixins/responsiveness';
 @import 'mixins/interactions/index';
+@import 'mixins/whq-card-form';
 @import "colors";
 @import 'default';
 
@@ -398,14 +399,14 @@ ol, ul {
 	@include desktop-small{
 		margin-top: 85px;
 	}
-    
+
 }
 
 .no-hero-header .paragraph.no-hero .no-hero-title-wrapper,
 .hero{
 	position: relative;
 	overflow: hidden;
-  
+
 	::before{
 	  position: absolute;
 	  content: "";
@@ -419,5 +420,5 @@ ol, ul {
 	  background: transparent;
 	  animation: slideIn 2.5s ease-in-out forwards;
 	}
-  
+
 }
