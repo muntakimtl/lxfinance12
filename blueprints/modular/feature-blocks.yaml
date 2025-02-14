@@ -14,57 +14,10 @@ form:
               title: Module blocks
               underline: true
               fields:
-                header.module.pattern:
-                  label: Pattern
-                  type: selectize
-                  selectize:
-                      options:
-                          - text: "Horizontal"
-                            value: "horizontal"
-                          - text: "Vertical"
-                            value: "vertical"
-                header.module.icon_pattern:
-                  label: Icon Style
-                  type: selectize
-                  selectize:
-                      options:
-                          - text: "Normal"
-                            value: "normal"
-                          - text: "Rounded"
-                            value: "rounded"
-                          - text: "Square"
-                            value: "square"
-                header.module.classes:
-                  label: Classes
-                  type: selectize
-                  selectize:
-                      options:
-                          - text: "1 Feature per row"
-                            value: "flex-row-1"
-                          - text: "2 Feature per row"
-                            value: "flex-row-2"
-                          - text: "3 Feature per row"
-                            value: "flex-row-3"
-                          - text: "4 Feature per row"
-                            value: "flex-row-4"
-                          - text: "Smaller Header & text"
-                            value: "small-header"
-                          - text: "Apply border"
-                            value: "apply-border"
                 header.module.title.translatable:
                   type: text
                   label: Title
                   classes: 'translatable'
-                header.module.subtitle.translatable:
-                  type: text
-                  label: SubTitle
-                  classes: 'translatable'
-                header.module.description.translatable:
-                  type: textarea
-                  label: Description
-                  classes: 'translatable'
-                  rows: 10
-
 
             header.feature_blocks_section:
               ordering@: 4
@@ -84,9 +37,9 @@ form:
                       type: textarea
                       label: Description
                       classes: 'translatable'
-                    .icon:
+                    .image:
                       type: pagemediaselect
-                      label: Icon
+                      label: Image
             header.media_order:
                 ordering@: 99
 
