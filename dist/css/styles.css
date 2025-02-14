@@ -2851,7 +2851,6 @@ label.error {
   overflow: hidden;
   border-radius: 8px;
   border: 1px solid #EAECF0;
-  width: -webkit-fill-available;
   box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1019607843), 0px 1px 2px 0px rgba(16, 24, 40, 0.0588235294);
 }
 @media all and (max-width: 918px) {
