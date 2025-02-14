@@ -106,6 +106,10 @@
                   color: var(--color-white);
                   transition: color 1s ease-in-out;
                 }
+                .trial-days {
+                  color: var(--color-white);
+                  transition: color 1s ease-in-out;
+                }
               }
               .text-sm {
                 color: var(--color-white);
@@ -192,13 +196,19 @@
                 color: var(--color-pricing-title);
                 transition: color 1.5s ease-in-out;
                 text-align: center;
-                font-style: normal;
+                margin-bottom: 0.5rem;
                 @include typography(display-lg, bold);
 
                 @include desktop-small {
                   @include typography(display-lg, bold);
                 }
               
+              }
+              .trial-days {
+                color: var(--color-text-dark);
+                transition: color 1.5s ease-in-out;
+                margin-bottom: 1rem;
+                @include typography('display-md', regular);
               }
             }
 
@@ -209,7 +219,7 @@
             }
 
             .text-sm {
-              color: var(--color-pricing-title);
+              color: var(--color-text-dark);
               transition: color 1.5s ease-in-out;
               font-style: normal;
               // font-family: var(--default-font-2);
