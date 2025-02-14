@@ -1,14 +1,19 @@
 <footer class="footer-logo slide-up">
 	<div class="container footer-logo-container">
 		<div class="footer-logo-top">
-			{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
+			<div class="footer-logo-area">
+				{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
+				<p>Boost your career with expert-led soft skills training. Master communication, leadership, and teamwork to stand out in any professional setting.</p>
+				{% include 'widgets/footer-card.html.twig' %}
+			</div>
+			
 			{% include 'widgets/footer-link.html.twig' %}
 			{% include 'widgets/footer-contact.html.twig' %}
 		</div>
 
-		{% include 'widgets/footer-card.html.twig' %}
+		{% include 'widgets/footer-copyright.html.twig' %}
 	</div>
-	{% include 'widgets/footer-copyright.html.twig' %}
+	
 </footer>
 
 <style>
