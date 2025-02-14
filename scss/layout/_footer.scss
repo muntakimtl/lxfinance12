@@ -84,7 +84,7 @@
       text-decoration: none;
       @include typography(text-xl, regular);
       @include desktop-small {
-        @include typography(text-md, semibold);
+        @include typography(text-md, regular);
       }
 
       &:hover {
@@ -123,6 +123,12 @@
           }
           color: var(--panel-footer-text) !important;
         }
+
+        p {
+          b {
+            font-weight: normal;
+          }
+        }
       }
 
       .logo {
@@ -136,6 +142,17 @@
         flex-direction: column;
         justify-content: space-between;
         align-self: stretch;
+
+        @include desktop-small {
+          gap: 32px;
+          margin-bottom: 48px;
+        }
+
+        .branding-text {
+          @include desktop-small {
+            @include typography(text-lg, regular);
+          }
+        }
       }
 
       .footer-menu {
