@@ -40,6 +40,9 @@ form:
                 header.hero.image:
                     type: pagemediaselect
                     label: Hero image
+                header.hero.left_image:
+                    type: pagemediaselect
+                    label: Hero left image
                 header.hero.hero_bg:
                   type: pagemediaselect
                   label: Hero background image
