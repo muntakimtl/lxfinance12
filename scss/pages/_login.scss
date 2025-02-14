@@ -7,11 +7,18 @@
 }
 
 
-.login-section{
+.login-section, .forgot-section{
   background-color: var(--login-bg-container);
   padding-top: 6.25rem;
   margin: 0;
   border-radius: 8px 8px 0px 0px;
+
+  &.forgot-section .whq-card-content #grav-login{
+    &>h1, &>p{
+      display: none;
+    }
+  }
+
 
   @include whq-card-form(
     $text-color: var(--unsubscribe-text),
