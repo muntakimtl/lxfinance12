@@ -393,27 +393,6 @@ ol, ul {
     
 }
 
-.no-hero-header .paragraph.no-hero .no-hero-title-wrapper,
-.hero{
-	position: relative;
-	overflow: hidden;
-  
-	::before{
-	  position: absolute;
-	  content: "";
-	  box-shadow: 0 0 100px 40px #ffffff08;
-	  top: -100%;
-	  left: -100%;
-	  transform: rotate(-45deg);
-	  height: 60rem;
-	  // width: 30rem;
-	  // transition: .7s all;
-	  background: transparent;
-	  animation: slideIn 2.5s ease-in-out forwards;
-	}
-  
-}
-
 /* ============  Scale ============ */
 @keyframes scale {
 	0% {

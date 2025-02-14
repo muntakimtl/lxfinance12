@@ -38,9 +38,9 @@
   
   --hero-bg-container: var(--color-primary);
   --hero-bg: var(--color-white);
-  --hero-title: var(--color-white);
-  --hero-text: var(--color-white);
-  --hero-highlight: var(--color-white);
+  --hero-title: var(--color-text-dark);
+  --hero-text: var(--color-text-dark);
+  --hero-highlight: var(--color-primary);
 
   --color-section-title: var(--color-text-dark);
   --color-section-subtitle: var(--color-secondary);
@@ -100,7 +100,7 @@
   --policy-bg-container: var(--bg-body);
   
   --bg-button: var(--color-primary);
-  --bg-hero-button: var(--color-white);
+  --bg-hero-button: var(--color-primary);
   --bg-pricing-button: var(--color-primary);
 
   --bg-contact-btn: var(--color-primary);
@@ -113,7 +113,7 @@
   --color-global-btn: var(--color-primary);
 
   --color-button: var(--color-white);
-  --color-hero-button: var(--color-primary);
+  --color-hero-button: var(--color-white);
   --color-pricing-button: var(--color-white);
 
   --bg-alternate-button: var(--color-white);
