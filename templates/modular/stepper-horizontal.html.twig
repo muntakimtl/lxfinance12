@@ -1,0 +1,79 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+	<div class="steppers">
+		<div class="container">
+			<svg class="triangle" xmlns="http://www.w3.org/2000/svg" width="128" height="139" viewBox="0 0 128 139" fill="none">
+					<path opacity="0.3" d="M108.195 6.28374C109.456 5.40005 111.2 6.21257 111.335 7.74623L122.235 131.656C122.37 133.19 120.794 134.295 119.399 133.645L6.63943 81.1293C5.24375 80.4793 5.07513 78.5622 6.33586 77.6785L108.195 6.28374Z" stroke="#E8A511" stroke-width="10"/>
+			</svg>
+
+			<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="279" height="272" viewBox="0 0 279 272" fill="none">
+				<path opacity="0.3" d="M134.577 144.331C131.742 145.369 128.696 140.362 132.437 136.341C135.592 132.233 145.413 132 150.432 140.083C155.803 147.523 153.266 162.253 141 168.301C129.422 174.922 109.959 169.512 102.866 152.828C94.9975 136.929 103.055 112.456 123.873 104.381C143.846 95.2462 173.01 106.32 182.143 131.586C192.545 155.974 178.907 190.137 149.564 200.26C121.185 211.889 82.3393 195.209 71.1565 161.325C58.2223 128.454 77.4409 84.5754 115.31 72.4222C152.112 58.2873 200.601 80.5984 213.853 123.089C229.285 164.415 204.549 218.042 158.127 232.22C112.928 248.866 54.7414 220.906 39.4466 169.821C21.4804 120.008 51.7987 56.6862 106.746 40.4625C160.352 21.3304 228.213 54.8933 245.563 114.592C266.057 172.874 230.164 245.933 166.691 264.18C104.665 285.834 27.1501 246.605 7.73553 178.318C-15.2642 111.569 26.158 28.7804 98.1824 8.50286C168.61 -15.6421 255.812 29.2014 277.274 106.096" stroke="url(#paint0_linear_14040_10640)" stroke-width="2" stroke-linecap="round"/>
+				<defs>
+				<linearGradient id="paint0_linear_14040_10640" x1="275.134" y1="98.11" x2="5.32674" y2="170.405" gradientUnits="userSpaceOnUse">
+				<stop stop-color="#FFFEB5"/>
+				<stop offset="1" stop-color="#E8A511"/>
+				</linearGradient>
+				</defs>
+			</svg> 
+
+
+    <svg class="four_dots" xmlns="http://www.w3.org/2000/svg" width="25" height="148" viewBox="0 0 25 148" fill="none">
+      <g>
+        <circle class="dot dot-1" cx="12.5" cy="12.5" r="12.5" fill="#E8A511" opacity="0.3"></circle>
+        <circle class="dot dot-2" cx="12.5" cy="53.5" r="12.5" fill="#E8A511" opacity="0.3"></circle>
+        <circle class="dot dot-3" cx="12.5" cy="94.5" r="12.5" fill="#E8A511" opacity="0.3"></circle>
+        <circle class="dot dot-4" cx="12.5" cy="135.5" r="12.5" fill="#E8A511" opacity="0.3"></circle>
+      </g>
+    </svg>
+
+
+
+			<div class="steppers-header-section">
+				
+
+				{% if module.subtitle %}
+					<div class="sub-title">
+						<h4>{{ module.subtitle.translatable }}</h4>
+					</div>
+
+				{% endif %}
+
+				{% if module.title %}
+					<h3 class="block-title">{{ module.title.translatable }}</h3>
+				{% endif %}
+
+				{% if module.description %}
+					<p>{{ module.description.translatable }}</p>
+				{% endif %}
+			</div>
+
+			<div class="steppers-container">
+				<svg class="step_line" xmlns="http://www.w3.org/2000/svg" width="1280" height="181" viewBox="0 0 1280 181" fill="none">
+				<path d="M1.55713 179.446C60.3947 91.9675 231.224 -60.6577 443.838 28.6709C709.606 140.332 699.615 161.059 855.482 89.8507C1011.34 18.6416 1176.87 24.3249 1278.44 151.364" stroke="#E8A511" stroke-width="4" stroke-dasharray="20 20"/>
+				</svg>
+
+				{% for stepper_block in page.header.stepper_blocks %}
+					{% if stepper_block.description != '' and stepper_block.title != '' %}
+						
+						<div class="stepper">
+							<div class="steps_icon" >
+								{% set icon = page.media[stepper_block.icon] %}
+								<img class="icon" src="{{ icon.url }}"/>
+							</div>
+							<div class="steps_content" >
+									<h4  class="stepper-title">{{ stepper_block.title.translatable }}</h4>
+									<p class="stepper-description">{{ stepper_block.description.translatable }}</p>	
+							</div>
+						</div>
+
+					{% endif %}
+				{% endfor %}
+			</div>
+
+		</div>
+		
+	</div>
+{% endblock %}

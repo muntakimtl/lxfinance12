@@ -60,10 +60,12 @@
     overflow: hidden;
     width: 100%;
 
-    @include padding(padding-lg);
+    padding-left: 60px;
+    padding-right: 60px;
 
     @include desktop-small {
-      @include padding(padding-sm);
+      padding-left: 36px;
+      padding-right: 36px;
     }
 
     @include tablet {
@@ -78,11 +80,15 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      max-width: 1285px;
+      max-width: 1216px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       z-index: 10;
+
+      @include desktop-small{
+        max-width: calc(1024px - 32px);
+      }
 
       .control-left,
       .control-right {

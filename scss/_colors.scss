@@ -20,27 +20,28 @@
   --color-white: #FFFFFF;
   
   --color-primary: #E8A511;
+  --color-primary-light: rgba(255, 255, 255, 0.51);
   --color-secondary: #1C1C1C;
   --color-tertiary: #F04438;
-  --bg-body: #191B1F;
+  --bg-body: #F5F5F5;
   // --bg-secondary: #F5F5F5;
   // --border-color: #98A2B3;
 
   // --color-text-light: #B2BAC4;
   --color-text-dark: #121212; 
-  --color-black: #0B0C0E;
+  --color-black: #191B1F;
   --color-grey: #F9FAFB;
 
   --panel-header-bg: var(--color-white);
   --panel-header-text: var(--color-text-dark);
-  --panel-footer-bg: var(--color-primary);
+  --panel-footer-bg: var(--color-white);
   --panel-footer-text: var(--color-white);
   
   --hero-bg-container: var(--color-primary);
   --hero-bg: var(--color-white);
-  --hero-title: var(--color-white);
-  --hero-text: var(--color-white);
-  --hero-highlight: var(--color-white);
+  --hero-title: var(--color-text-dark);
+  --hero-text: var(--color-text-dark);
+  --hero-highlight: var(--color-primary);
 
   --color-section-title: var(--color-text-dark);
   --color-section-subtitle: var(--color-secondary);
@@ -62,12 +63,12 @@
   // --text-bg-container: var(--bg-body);
   --text-bg-container: var(--color-black);
   --text-bg: var(--bg-body);
-  --text-text: var(--color-white);
+  --text-text: var(--color-black);
   
   --pricing-bg-container: var(--bg-secondary);
   --pricing-bg: var(--color-white);
-  --pricing-text: var(--color-primary);
-  --color-pricing-title: var(--color-text-dark);
+  --pricing-text: var(--color-text-dark);
+  --color-pricing-title: var(--color-primary);
 
 
   // Contact us page
@@ -81,9 +82,9 @@
   --no-hero-bg: var(--color-primary);
   --no-hero-text: var(--color-white);
 
-  --login-bg-container: var(--color-primary);
-  --login-bg: var(--color-white);
-  --login-text: var(--color-white);
+  --login-bg-container: var(--color-white);
+  --login-bg: var(--color-primary);
+  --login-text: var(--color-text-dark);
 
   --profile-bg-container: var(--color-white);
   --profile-bg: var(--color-white);
@@ -95,12 +96,16 @@
 
   --unsubscribe-bg-container: var(--color-white);
   --unsubscribe-bg: var(--color-primary);
-  --unsubscribe-text: var(--color-white);
+  --unsubscribe-title: var(--color-white);
+  --unsubscribe-text: var(--color-text-dark);
+  --unsubscribe-btn-text: var(--color-white);
+  --unsubscribe-btn-bg: var(--color-primary);
+  --unsubscribe-input-border: 8px;
 
   --policy-bg-container: var(--bg-body);
   
   --bg-button: var(--color-primary);
-  --bg-hero-button: var(--color-white);
+  --bg-hero-button: var(--color-primary);
   --bg-pricing-button: var(--color-primary);
 
   --bg-contact-btn: var(--color-primary);
@@ -113,7 +118,7 @@
   --color-global-btn: var(--color-primary);
 
   --color-button: var(--color-white);
-  --color-hero-button: var(--color-primary);
+  --color-hero-button: var(--color-white);
   --color-pricing-button: var(--color-white);
 
   --bg-alternate-button: var(--color-white);
