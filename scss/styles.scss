@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'mixins/responsiveness';
 @import 'mixins/interactions/index';
+@import 'mixins/whq-card-form';
 @import "colors";
 @import 'default';
 
@@ -31,6 +32,7 @@
 @import 'pages/unsubscribe';
 @import 'pages/contact-us';
 @import 'pages/about';
+@import 'pages/change-password';
 
 @import 'forms/change-password';
 @import 'forms/cancel-membership';
@@ -392,7 +394,7 @@ ol, ul {
 	@include desktop-small{
 		margin-top: 85px;
 	}
-    
+
 }
 
 /* ============  Scale ============ */

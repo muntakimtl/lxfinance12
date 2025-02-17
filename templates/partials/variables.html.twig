@@ -6,6 +6,7 @@
 
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
 
+<<<<<<< HEAD
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".feature-track");
@@ -118,3 +119,21 @@
         startAutoSlide();
     });
 </script>
+=======
+<style>
+
+  .page-login #grav-login {
+    .form-field:first-child{
+      &:before{
+        content: "{{ 'PLUGIN_LOGIN.USERNAME_EMAIL'|t }}";
+      }
+    }
+    .form-field:nth-child(2){
+      &:before{
+        content: "{{ 'PLUGIN_LOGIN.PASSWORD'|t }}";
+
+      }
+    }
+  }
+</style>
+>>>>>>> forms

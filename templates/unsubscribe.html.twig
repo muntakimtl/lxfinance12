@@ -1,0 +1,45 @@
+{% set body_classes = "page-unsubscribe" %}
+{% extends 'partials/base.html.twig' %}
+
+{% block article %}
+    {% set module = page.header %}
+    {% include 'partials/no-hero-header.html.twig' with {
+        'title': "METRICALO.CANCEL_SUBSCRIPTION"|t,
+        'links': [
+            {
+                'url': '/',
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': "METRICALO.CANCEL_SUBSCRIPTION"|t
+            }
+        ]
+    } %}
+    <style>
+
+    </style>
+    {#    <div class="unsubscribe-section"> #}
+    {#        <div class="container "> #}
+    {#            <div class="unsubscribe"> #}
+    {#                <p class="unsubscribe-title">{{ "METRICALO.ARE_YOU_SURE_CANCELLATION"|t }}</p> #}
+    {#                <div class="unsubscribe-form"> #}
+
+    {#                </div> #}
+    {#            </div> #}
+
+    {#        </div> #}
+    {#    <div> #}
+        <div class="unsubscribe-section">
+            <div class="container ">
+                {% embed "widgets/whq-card.html.twig" %}
+                    {% block card_title %}
+                        {{ "METRICALO.ARE_YOU_SURE_CANCELLATION"|t }}
+                    {% endblock %}
+
+                    {% block card_content %}
+                        {% include "forms/form.html.twig" with {form: forms('unsubscribe'), action: '#'} %}
+                    {% endblock %}
+                {% endembed %}
+            </div>
+        <div>
+{% endblock %}

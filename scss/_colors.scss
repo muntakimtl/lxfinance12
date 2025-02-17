@@ -82,9 +82,9 @@
   --no-hero-bg: var(--color-primary);
   --no-hero-text: var(--color-white);
 
-  --login-bg-container: var(--color-primary);
-  --login-bg: var(--color-white);
-  --login-text: var(--color-white);
+  --login-bg-container: var(--color-white);
+  --login-bg: var(--color-primary);
+  --login-text: var(--color-text-dark);
 
   --profile-bg-container: var(--color-white);
   --profile-bg: var(--color-white);
@@ -96,7 +96,11 @@
 
   --unsubscribe-bg-container: var(--color-white);
   --unsubscribe-bg: var(--color-primary);
-  --unsubscribe-text: var(--color-white);
+  --unsubscribe-title: var(--color-white);
+  --unsubscribe-text: var(--color-text-dark);
+  --unsubscribe-btn-text: var(--color-white);
+  --unsubscribe-btn-bg: var(--color-primary);
+  --unsubscribe-input-border: 8px;
 
   --policy-bg-container: var(--bg-body);
   
