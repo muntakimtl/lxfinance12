@@ -123,3 +123,18 @@ const offerElements = document.querySelectorAll('.offer');
         observer.observe(element);
     });
 }
+
+
+// Menu 
+const menuIcon = document.getElementById('menu-icon');
+const offCanvasMenu = document.getElementById('menuToggle'); // Your off-canvas menu element
+
+menuIcon.addEventListener('change', function() {
+  if (this.checked) {
+    offCanvasMenu.classList.add('hide'); // Or however you show your menu
+    offCanvasMenu.classList.remove('show'); // Or however you show your menu
+  } else {
+    offCanvasMenu.classList.add('show'); // Or however you hide your menu
+    offCanvasMenu.classList.remove('hide'); // Or however you hide your menu
+  }
+});
