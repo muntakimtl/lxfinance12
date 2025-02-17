@@ -138,3 +138,4 @@ menuIcon.addEventListener('change', function() {
     offCanvasMenu.classList.remove('hide'); // Or however you hide your menu
   }
 });
+

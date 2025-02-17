@@ -6,8 +6,8 @@
 	{% set bg = page.media[page.header.offer.offer_bg].url ?? '' %}
 
 	<div class="offer">
-		<div class="container"  style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
-			<div class="offer-text">
+		<div class="container">
+			<div class="offer-text" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
 				<h1 class="offer-title">
 					{{ module.h1.translatable|striptags('<span>')|raw }}
 				</h1>
