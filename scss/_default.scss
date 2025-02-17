@@ -92,7 +92,7 @@ h6 span {
   border: 1px solid var(--gradient);
   // transition: all 0.3s;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 1;
 
   &::before {
@@ -100,18 +100,18 @@ h6 span {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0%; 
+    width: 0%;
     height: 100%;
-    background-color: var(--color-secondary); 
+    background-color: var(--color-secondary);
     // background-color: #000;
-    transition: all 0.3s; 
-    z-index: -1; 
+    transition: all 0.3s;
+    z-index: -1;
   }
 
   &:hover {
-    color: var(--color-white) !important; 
+    color: var(--color-white) !important;
   }
-  
+
   &:hover::before {
     width: 100%;
   }
@@ -122,26 +122,27 @@ h6 span {
 .form-login-wrapper #grav-login .form-action-wrapper .primary,
 .content-section.change-password-form .form-actions button,
 .profile-page .content-section a,
-.header .container .header-buttons .signup, 
-.hero .hero-container .hero-text .button {
+.header .container .header-buttons .signup,
+.offer .container .offer-text .button
+{
   transition: all 0.3s ease-in-out;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 1;
 
   &::after {
-    background-color: transparent; 
+    background-color: transparent;
   }
 
   &::before {
-    background-color: #e9e9f0; 
+    background-color: #e9e9f0;
   }
 
   &:hover {
-    // color: var(--color-primary); 
+    // color: var(--color-primary);
     -webkit-text-fill-color: var(--color-primary);
   }
-  
+
   &:hover::before {
     width: 100%;
   }
