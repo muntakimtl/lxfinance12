@@ -37,6 +37,25 @@
 					{% endif %}
 				{% endif %}
 			{% endfor %}
+
+
+				{% if grav.user.authenticated %}
+					<li class=" {{ current_page|e }}">
+						<a class="logout-btn" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+					</li>
+				{% else %}
+					<li class=" {{ current_page|e }}">
+						<a class="login-btn" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+					</li>
+					<li class=" {{ current_page|e }}">
+						<a class="signup-btn" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
+					</li>
+				{% endif %}
+				
+
+
+		
+
 		</ul>
 	</nav>
 </div>
