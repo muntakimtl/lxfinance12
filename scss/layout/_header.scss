@@ -187,6 +187,20 @@
 
 
 /* ============  Menu ============ */
+.main-menu {
+  .language-modal-wrapper {
+    // position: absolute;
+    // top: 12%;
+    // right: 8%;
+    // border: 1px solid var(--color-black);
+    // border-radius: 8px;
+    // padding: 12px;
+  }
+
+
+}
+
+
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked){
   position: absolute;
@@ -197,8 +211,8 @@
 .menu-icon:checked + label,
 .menu-icon:not(:checked) + label{
   position: fixed;
-  top: 36px;
-  right: 24px;
+  top: 23px;
+  right: 19px;
   display: block;
   width: 30px;
   height: 30px;
@@ -206,6 +220,11 @@
   margin: 0;
   cursor: pointer;
   z-index: 100;
+
+  @include desktop-small {
+    top: 38px;
+    right: 48px;
+  }
 }
 
 .menu-icon:checked + label:before,
@@ -275,8 +294,8 @@
   top: 0px;
   right: 0px;
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   padding: 0;
   margin: 0;
   z-index: 9;
@@ -288,6 +307,11 @@
               transform 250ms 1100ms ease,
               width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
               height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  @include desktop-small {
+    top: 20%;
+    right: 30px;    
+  }
 }
 
 @keyframes border-transform{
@@ -410,15 +434,14 @@
 }
 
 
+
 @media screen and (max-width: 991px) {
   .menu-icon:checked + label,
   .menu-icon:not(:checked) + label{
-    right: 55px;
+   
   }
 
-  .nav{
-    right: 30px;
-  }
+ 
   h1{
     font-size: 9vw;
     -webkit-text-stroke: 2px transparent;
