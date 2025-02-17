@@ -4599,8 +4599,8 @@ form[name=contact-us] .form-field:nth-child(2) {
   transition: width 100ms ease, right 100ms ease, margin-top 100ms 500ms ease, transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.menu-icon:checked + .menu-toggle {
-  display: none;
+.menu-icon:checked .menu-toggle {
+  display: none !important;
 }
 
 .nav {
@@ -4778,6 +4778,14 @@ form[name=contact-us] .form-field:nth-child(2) {
     font-size: 8vh;
   }
 }
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 /* ============ End Menu ============ */
 @media only screen and (min-width: 1024px) {
   #header .container {

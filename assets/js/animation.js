@@ -116,21 +116,15 @@ if (!window.myScriptLoaded) {
 
 
 // Menu 
-const menuToggle = document.getElementById('menuToggle');
-  menuToggle.addEventListener('click', toggleMenuFun);
-  
+const menuIcon = document.getElementById('menu-icon');
+const offCanvasMenu = document.getElementById('menuToggle'); // Your off-canvas menu element
 
-  function toggleMenuFun() {
-    const existHideClass = menuToggle.classList.contains('hide');
-    console.log(existHideClass)
-
-    if (existHideClass) {
-      menuToggle.classList.add("show"); 
-      menuToggle.classList.remove("hide"); 
-
-    } else {
-      menuToggle.classList.add("hide"); 
-      menuToggle.classList.remove("show");
-
-    }
+menuIcon.addEventListener('change', function() {
+  if (this.checked) {
+    offCanvasMenu.classList.add('hide'); // Or however you show your menu
+    offCanvasMenu.classList.remove('show'); // Or however you show your menu
+  } else {
+    offCanvasMenu.classList.add('show'); // Or however you hide your menu
+    offCanvasMenu.classList.remove('hide'); // Or however you hide your menu
   }
+});
