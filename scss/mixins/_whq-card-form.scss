@@ -34,7 +34,9 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
 
       .whq-card-content {
         padding: 42px;
-
+        .notice-container{
+          margin-bottom: 1rem;
+        }
         @include desktop-small {
           padding: 2rem 1rem;
         }
