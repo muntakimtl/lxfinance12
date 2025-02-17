@@ -374,13 +374,13 @@
 .nav ul li a:after{
   display: block;
   position: absolute;
-  top: 50%;
+  top: 70%;
   content: '';
-  height: 2vh;
+  height: 1vh;
   margin-top: -1vh;
   width: 0;
   left: 0;
-  background-color: #353746;
+  background-color: var(--color-primary-light);
   opacity: 0.8;
   transition: width 250ms linear;
 }
