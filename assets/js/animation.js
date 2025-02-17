@@ -113,3 +113,24 @@ if (!window.myScriptLoaded) {
         observer.observe(element);
     });
 }
+
+
+// Menu 
+const menuToggle = document.getElementById('menuToggle');
+  menuToggle.addEventListener('click', toggleMenuFun);
+  
+
+  function toggleMenuFun() {
+    const existHideClass = menuToggle.classList.contains('hide');
+    console.log(existHideClass)
+
+    if (existHideClass) {
+      menuToggle.classList.add("show"); 
+      menuToggle.classList.remove("hide"); 
+
+    } else {
+      menuToggle.classList.add("hide"); 
+      menuToggle.classList.remove("show");
+
+    }
+  }

@@ -4555,7 +4555,7 @@ form[name=contact-us] .form-field:nth-child(2) {
 .menu-icon:checked + label:before,
 .menu-icon:not(:checked) + label:before {
   position: absolute;
-  content: "xx";
+  content: "";
   display: block;
   width: 30px;
   height: 20px;
@@ -4599,8 +4599,12 @@ form[name=contact-us] .form-field:nth-child(2) {
   transition: width 100ms ease, right 100ms ease, margin-top 100ms 500ms ease, transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.menu-icon:checked + .menu-toggle {
+  display: none;
+}
+
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0px;
   right: 0px;
   display: block;
@@ -4641,6 +4645,8 @@ form[name=contact-us] .form-field:nth-child(2) {
 }
 .menu-icon:checked ~ .nav {
   animation-play-state: paused;
+  animation: none;
+  background: var(--color-white);
   top: 0%;
   right: 0%;
   z-index: 99;

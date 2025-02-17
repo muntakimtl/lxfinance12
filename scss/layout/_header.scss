@@ -192,6 +192,8 @@
   position: absolute;
   left: -9999px;
 }
+
+
 .menu-icon:checked + label,
 .menu-icon:not(:checked) + label{
   position: fixed;
@@ -205,10 +207,11 @@
   cursor: pointer;
   z-index: 100;
 }
+
 .menu-icon:checked + label:before,
 .menu-icon:not(:checked) + label:before{
   position: absolute;
-  content: 'xx';
+  content: '';
   display: block;
   width: 30px;
   height: 20px;
@@ -263,8 +266,12 @@
               transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.menu-icon:checked + .menu-toggle {
+  display: none;
+}
+
 .nav{
-  position: fixed;
+  position: absolute;
   top: 0px;
   right: 0px;
   display: block;
@@ -296,6 +303,8 @@
 
 .menu-icon:checked ~ .nav {
   animation-play-state: paused;
+  animation: none;
+  background: var(--color-white);
   top: 0%;
   right: 0%;
   // transform: translate(50%, -50%);
@@ -423,6 +432,4 @@
     font-size: 8vh;
   }
 }
-
-
 /* ============ End Menu ============ */
