@@ -5,3 +5,20 @@
 {% block render_block %}{% endblock %}
 
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+
+<style>
+
+  .page-login #grav-login {
+    .form-field:first-child{
+      &:before{
+        content: "{{ 'PLUGIN_LOGIN.USERNAME_EMAIL'|t }}";
+      }
+    }
+    .form-field:nth-child(2){
+      &:before{
+        content: "{{ 'PLUGIN_LOGIN.PASSWORD'|t }}";
+
+      }
+    }
+  }
+</style>

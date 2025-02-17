@@ -32,11 +32,27 @@
     $label_typography: (size: text-md, weight: semibold),
     $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
   );
+
+   #grav-login {
+    .form-field:first-child{
+      &:before{
+        display: block;
+        @include typography(text-md,semibold);
+      }
+    }
+    .form-field:nth-child(2){
+      &:before{
+        display: block;
+        @include typography(text-md,semibold);
+
+      }
+    }
+  }
+
   .form-actions{
     display: block;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 2rem;
     .form-data.rememberme {
       margin-top: 15px;
       text-align: left;

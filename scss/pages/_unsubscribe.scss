@@ -1,4 +1,4 @@
-.unsubscribe-section {
+.cancel-membership-section, .unsubscribe-section {
   background: var(--unsubscribe-bg-container);
   padding-top: 6.25rem;
   margin: 0;
@@ -16,4 +16,12 @@
           $label_typography: (size: text-md, weight: semibold),
           $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
   );
+}
+.cancel-membership-section{
+  .form-actions{
+    .button{
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
 }
