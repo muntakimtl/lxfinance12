@@ -100,6 +100,7 @@
           }
           &:hover{
             box-shadow: none;
+            color: var(--color-primary) !important;
             transform: translateY(0);
           }
         }
