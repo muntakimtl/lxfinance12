@@ -89,7 +89,6 @@
         justify-content: space-between;
 
         @include desktop-small {
-          padding: 4rem 1rem 0;
           justify-content: center;
         }
 
@@ -220,6 +219,20 @@
 }
 /* ------------ Unique Design and animation for same module ---------------*/
 .about-company-in-home-page {
+  .text_left {
+    @include desktop-small {
+      flex-direction: column !important;
+    }
+  }
+
+  .button {
+    @include desktop-small{
+      left: 5%;
+      bottom: 0% !important;
+    }
+    
+  }
+
 
   .img-top-left {
     animation: scale 10s linear 0s infinite forwards !important;
@@ -247,6 +260,8 @@
         bottom: 0%;
         right: 0%;
         width: 100%;
+        animation: none;
+        transform: translateY(0%);
       }
     }
   }
