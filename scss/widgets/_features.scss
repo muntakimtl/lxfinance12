@@ -70,6 +70,8 @@
 
     @include tablet {
       flex-direction: column;
+      padding-left: 16px;
+      padding-right: 16px;
     }
 
     .feature-slider-controls {
