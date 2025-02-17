@@ -225,6 +225,7 @@
     }
   }
 
+
   .button {
     @include desktop-small{
       left: 5%;
@@ -238,12 +239,24 @@
     animation: scale 10s linear 0s infinite forwards !important;
   }
 
+  .img-top-right {
+    animation: none !important;
+    transform: scale(60%);
+    top: 8%;
+  }
+
   .image {
+    .img-on-content {
+      @include desktop-small {
+        display: none !important;
+      }
+    }
     .main-img {
       width: 60% !important;
 
       @include desktop-small {
         position: static;
+        width: 100%!important; 
       }
     }
 
