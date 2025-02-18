@@ -96,52 +96,19 @@
         color: var(--color-white);
 
         padding: 10px 20px;
-        // border-radius: 8px !important;
         @include desktop-small {
           display: none;
         }
         @include typography(text-md, semibold);
-        //&:hover {
-        //  background: var(--color-white);
-        //  color: var(--color-black);
-        //}
+        
       }
-      //.active-btn:hover {
-      //  border: 1px solid var(--color-alternate-button);
-      //  color: var(--color-alternate-button);
-      //  background: var(--bg-alternate-button);
-      //}
 
       .signup {
-        //color: var(--color-alternate-button);
-
         background: var(--color-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
         border: 1px solid var(--color-primary);
-        // transition: all 0.3s ease-in-out;
-        // position: relative;
-        // overflow: hidden; 
-        // z-index: 1;
-      
-        // &::after {
-        //   background-color: transparent; 
-        // }
-      
-        // &::before {
-        //   background-color: #e9e9f0; 
-        // }
-      
-        // &:hover {
-        //   // color: var(--color-primary); 
-        //   -webkit-text-fill-color: var(--color-primary);
-        // }
-        
-        // &:hover::before {
-        //   width: 100%;
-        // }
-
       }
 
       .language-switcher {
@@ -187,19 +154,10 @@
 
 
 /* ============  Menu ============ */
-.main-menu {
-  .language-modal-wrapper {
-    // position: absolute;
-    // top: 12%;
-    // right: 8%;
-    // border: 1px solid var(--color-black);
-    // border-radius: 8px;
-    // padding: 12px;
-  }
-
-
+.lang-flag {
+  width: 27px;
+  height: auto;
 }
-
 
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked){
@@ -389,6 +347,10 @@
   color: var(--color-text-dark);
   transition: all 250ms linear;
   text-decoration: none;
+
+  @include desktop-small {
+    @include typography('display-sm', bold);
+  }
 }
 .nav ul li a:hover{
   text-decoration: none;
@@ -431,28 +393,6 @@
 }
 .menu-icon:checked ~ .nav ul li:nth-child(4){
   transition-delay: 1640ms;
-}
-
-
-
-@media screen and (max-width: 991px) {
-  .menu-icon:checked + label,
-  .menu-icon:not(:checked) + label{
-   
-  }
-
- 
-  h1{
-    font-size: 9vw;
-    -webkit-text-stroke: 2px transparent;
-    text-stroke: 2px transparent;
-    -webkit-text-fill-color: #ffeba7;
-    text-fill-color: #ffeba7;
-    color: #ffeba7;
-  }
-  .nav ul li a{
-    font-size: 8vh;
-  }
 }
 
 .hide {

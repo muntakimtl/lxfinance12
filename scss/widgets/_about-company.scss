@@ -1,306 +1,319 @@
-  .about-company-wrapper{
-    position: relative;
+.about-company-wrapper{
+  position: relative;
+  overflow: hidden;
 
-    .img-top-left,
-    .img-top-right,
-    .img-bottom-right {
-      position: absolute;
+  .img-top-left,
+  .img-top-right,
+  .img-bottom-right {
+    position: absolute;
+  }
+
+  .img-top-left{
+    top: 2%;
+    left: -40px;
+    animation: rotateFull 10s linear 0s infinite forwards;
+  }
+
+  .img-top-right{
+    top: 0;
+    right: -40px;
+    animation: scale 10s linear 0s infinite forwards;
+  }
+
+  .img-bottom-right{
+    bottom: 0;
+    right: 0px;
+    animation: scale 10s linear 0s infinite forwards;
+  }
+
+  .img-bottom-right{
+    bottom: 0;
+    right: 0px;
+  }
+
+  .contents-wrapper{
+    padding: 5rem 0;
+
+    @include desktop-small{
+      padding: 4rem 0;
     }
 
-    .img-top-left{
-      top: 2%;
-      left: -40px;
-      animation: rotateFull 10s linear 0s infinite forwards;
-    }
+    .header-content{
+      text-align: center;
 
-    .img-top-right{
-      top: 0;
-      right: -40px;
-      animation: scale 10s linear 0s infinite forwards;
-    }
-
-    .img-bottom-right{
-      bottom: 0;
-      right: 0px;
-      animation: scale 10s linear 0s infinite forwards;
-    }
-
-    .img-bottom-right{
-      bottom: 0;
-      right: 0px;
-    }
-
-    .contents-wrapper{
-      padding: 5rem 0;
-
-      @include desktop-small{
-        padding: 4rem 0;
+      h3 {
+        @include typography(display-lg, bold);
+        @include desktop-small {
+          @include typography(display-md, bold);
+        }
+        color: var(--color-container-title);
+        padding-top: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
-      .header-content{
-        text-align: center;
+      h4{
+        color: var(--color-about-company-sub-title);
+        display: inline;
+        line-height: 28px; /* 155.556% */
+        @include typography(text-lg, semibold);
+        @include desktop-small {
+          @include typography(text-md, semibold);
+        }
+      }
 
-        h3 {
-          @include typography(display-lg, bold);
-          @include desktop-small {
-            @include typography(display-md, bold);
+      
+    }
+
+    .text_left{
+      flex-direction: row;
+
+      @include desktop-small {
+        flex-direction: column-reverse;
+      }
+    
+    }
+    .text_right {
+      flex-direction: row-reverse;
+
+      @include desktop-small {
+        flex-direction: column-reverse;
+      }
+    } 
+
+    .company-contents{
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding-top: 4rem;
+      @include padding(padding-lg);
+      justify-content: space-between;
+
+      @include desktop-small {
+        justify-content: center;
+      }
+
+      .contents{
+        flex-basis: 50%;
+        color: var(--text-text);
+
+        .content-title {
+          padding-bottom: 42px;
+        }
+        /*------ Random icon------*/
+        .random-icon-list-group { 
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+
+          .list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            opacity: 0;
+            animation: fadeInUp100 2s ease 0.3s forwards;
+           
+            .list-header {
+              display: flex;
+              gap: 1.5rem;
+              align-items: center;
+
+              .title {
+                color: var(--color-primary);
+                @include typography('display-sm', bold);
+              }
+            }
+
+            .list-content {
+              p {
+                @include typography('text-xl', regular);
+              }
+            }
           }
-          color: var(--color-container-title);
-          padding-top: 20px;
-          padding-left: 16px;
-          padding-right: 16px;
         }
 
-        h4{
-          color: var(--color-about-company-sub-title);
-          display: inline;
-          line-height: 28px; /* 155.556% */
-          @include typography(text-lg, semibold);
-          @include desktop-small {
-            @include typography(text-md, semibold);
+        /*------End Random icon------*/
+
+        /*------ Same icon------*/
+        .same-icon-list-group { 
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          .list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            animation: fadeInUp100 2s ease 0.3s forwards;
+           
+            .list-header {
+              display: flex;
+              gap: 1.125rem;
+              align-items: center;
+
+              .title {
+                color: var(--color-primary);
+                @include typography('display-xs', bold);
+              }
+            }
+
+            .list-content {
+              p {
+                @include typography('text-xl', regular);
+              }
+            }
           }
         }
+
+        /*------End same icon------*/
 
         
+
+        .button {
+          align-self: flex-start;
+          display: flex;
+          align-items: center;
+          border: 1px solid var(--color-primary);
+          padding: 16px 28px;
+          @include typography('text-xl', bold);
+ 
+          background: var(--color-white) !important;
+          color: var(--color-primary);
+          width: fit-content;
+          margin-top: 1rem;
+          border-radius: 8px;
+          position: absolute;
+          right: 10%;
+          bottom: 10%;
+        }
+
+        p, li {
+          @include typography(text-lg, regular);
+        }
+  
+        li {
+          @include typography(text-lg, regular);
+        }
       }
 
-      .text_left{
-        flex-direction: row;
+      .image{
+        flex-basis: 50%;
+        text-align: center;
+        position: relative;
+        z-index: -1;
 
-        @include desktop-small {
-          flex-direction: column-reverse;
-        }
-      
-      }
-      .text_right {
-        flex-direction: row-reverse;
-
-        @include desktop-small {
-          flex-direction: column-reverse;
-        }
-      } 
-
-      .company-contents{
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-        padding-top: 4rem;
-        @include padding(padding-lg);
-        justify-content: space-between;
-
-        @include desktop-small {
-          justify-content: center;
+        .main-img{
+          width: 100%;           
         }
 
-        .contents{
-          flex-basis: 50%;
-          color: var(--text-text);
-
-          .content-title {
-            padding-bottom: 42px;
-          }
-          /*------ Random icon------*/
-          .random-icon-list-group { 
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-
-            .list-item {
-              display: flex;
-              flex-direction: column;
-              gap: 2rem;
-              opacity: 0;
-              animation: fadeInUp100 2s ease 0.3s forwards;
-             
-              .list-header {
-                display: flex;
-                gap: 1.5rem;
-                align-items: center;
-
-                .title {
-                  color: var(--color-primary);
-                  @include typography('display-sm', bold);
-                }
-              }
-
-              .list-content {
-                p {
-                  @include typography('text-xl', regular);
-                }
-              }
-            }
-          }
-
-          /*------End Random icon------*/
-
-          /*------ Same icon------*/
-          .same-icon-list-group { 
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
-            .list-item {
-              display: flex;
-              flex-direction: column;
-              gap: 12px;
-              opacity: 0;
-              animation: fadeInUp100 2s ease 0.3s forwards;
-             
-              .list-header {
-                display: flex;
-                gap: 1.125rem;
-                align-items: center;
-
-                .title {
-                  color: var(--color-primary);
-                  @include typography('display-xs', bold);
-                }
-              }
-
-              .list-content {
-                p {
-                  @include typography('text-xl', regular);
-                }
-              }
-            }
-          }
-
-          /*------End same icon------*/
-
-          
-
-          .button {
-            align-self: flex-start;
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--color-primary);
-            padding: 16px 28px;
-            @include typography('text-xl', bold);
-   
-            background: var(--color-white) !important;
-            color: var(--color-primary);
-            width: fit-content;
-            margin-top: 1rem;
-            border-radius: 8px;
-            position: absolute;
-            right: 10%;
-            bottom: 10%;
-          }
-
-          p, li {
-            @include typography(text-lg, regular);
-          }
-    
-          li {
-            @include typography(text-lg, regular);
-          }
-        }
-
-        .image{
-          flex-basis: 50%;
-          text-align: center;
-          position: relative;
-          z-index: -1;
-
-          .main-img{
-            width: 100%;           
-          }
-
-          .img-on-content {
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 1;
-            animation: rotateFull 5s linear 0s infinite forwards;
-          }
+        .img-on-content {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          animation: rotateFull 5s linear 0s infinite forwards;
         }
       }
     }
+  }
 }
 /* ------------ Unique Design and animation for same module ---------------*/
 .about-company-in-home-page {
-  .text_left {
-    @include desktop-small {
-      flex-direction: column !important;
-    }
+.text_left {
+  @include desktop-small {
+    flex-direction: column !important;
   }
+}
 
 
-  .button {
-    @include desktop-small{
-      left: 5%;
-      bottom: 0% !important;
-    }
-    
+.button {
+  @include desktop-small{
+    left: 5%;
+    bottom: 0% !important;
   }
+  
+}
 
 
-  .img-top-left {
-    animation: scale 10s linear 0s infinite forwards !important;
-  }
+.img-top-left {
+  animation: scale 10s linear 0s infinite forwards !important;
+}
 
-  .img-top-right {
+.img-top-right {
+  @include desktop-small {
     animation: none !important;
     transform: scale(60%);
-    top: 8%;
+    top: 3%;
   }
+}
 
-  .image {
-    .img-on-content {
-      @include desktop-small {
-        display: none !important;
-      }
-    }
-    .main-img {
-      width: 60% !important;
+.img-bottom-right {
+  right: 8%;
+  bottom: -5%;
 
-      @include desktop-small {
-        position: static;
-        width: 100%!important; 
-      }
-    }
+  @include desktop-small {
+    display: none;
+  }
+}
 
-    .overlay-image {
-      position: absolute;
-      top: 30%;
-      right: -35%;
-      z-index: 1;
-      transform: translateY(-50%);
-      animation: movementUpDown 10s linear 0s infinite forwards;
-
-      @include desktop-small {
-        position: static;
-        bottom: 0%;
-        right: 0%;
-        width: 100%;
-        animation: none;
-        transform: translateY(0%);
-      }
+.image {
+  .img-on-content {
+    @include desktop-small {
+      top: 97% !important;
+      right: -9% !important;
     }
   }
+  .main-img {
+    width: 60% !important;
+
+    @include desktop-small {
+      position: static;
+      width: 100%!important; 
+    }
+  }
+
+  .overlay-image {
+    position: absolute;
+    top: 30%;
+    right: -35%;
+    z-index: 1;
+    transform: translateY(-50%);
+    animation: movementUpDown 10s linear 0s infinite forwards;
+
+    @include desktop-small {
+      position: static;
+      bottom: 0%;
+      right: 0%;
+      width: 100%;
+      animation: none;
+      transform: translateY(0%);
+    }
+  }
+}
 }
 
 .about-company-in-about-page-text-right {
-  .img-top-left {
-    animation: scale 5s linear 0s infinite forwards !important;
-    left: 3%;
-  }
+.img-top-left {
+  animation: scale 5s linear 0s infinite forwards !important;
+  left: 3%;
+}
 }
 
 .about-company-in-about-page-text-left {
-  @include desktop-small {
-    .img-top-left {
-      display: none !important;
-    }
+@include desktop-small {
+  .img-top-left {
+    display: none !important;
   }
-  .img-bottom-right {
-    bottom: -5% !important;
-    right: -5% !important;
-  }
-  .img-on-content {
-    top: 6% !important;
-    right: 9% !important;
-    animation: scale 3s linear 0s infinite forwards !important;
-  }
+}
+.img-bottom-right {
+  bottom: -5% !important;
+  right: -5% !important;
+}
+.img-on-content {
+  top: 6% !important;
+  right: 9% !important;
+  animation: scale 3s linear 0s infinite forwards !important;
+}
 }
 /* ------------ End Unique Design and animation for same module ---------------*/
