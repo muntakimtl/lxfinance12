@@ -8,8 +8,8 @@ module.exports = {
     '../../../../themes/metricalo-base/templates/**/*.twig',
     './blueprints/**/*.yaml',
     './templates/**/*.twig',
-    './lexiorm08.yaml',
-    './lexiorm08.php'
+    './lexiorm12.yaml',
+    './lexiorm12.php'
   ],
   theme: {
     extend: {

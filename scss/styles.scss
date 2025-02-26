@@ -10,6 +10,7 @@
 @import 'widgets/no-hero-header';
 @import 'widgets/pricing';
 @import 'widgets/languages';
+@import 'widgets/stats';
 @import 'widgets/features';
 @import 'widgets/courses';
 @import 'widgets/stepper-horizontal';
@@ -44,8 +45,7 @@
 @import 'animations/animations';
 
 .container {
-	max-width: 1280px;
-	margin: 0 auto;
+	max-width: 1440px;
 	width: 100%;
 }
 

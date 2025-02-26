@@ -1,19 +1,7 @@
-.profile-page .no-hero-header{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url(../../images/no-hero/profile.png) lightgray 50% / cover no-repeat;
-}
-.page-about .no-hero-header{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url(../../images/no-hero/about-us.png) lightgray 50% / cover no-repeat;
-}
-.page-unsubscribe .no-hero-header{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url(../../images/no-hero/unsubscribe.png) lightgray 50% / cover no-repeat;
-}
-.page-terms .no-hero-header{
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url(../../images/no-hero/terms.png) lightgray 50% / cover no-repeat;
-}
 
 
 .no-hero-header {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url(../../images/no-hero/contact.png) lightgray 50% / cover no-repeat;
+  background: var(--color-secondary);
 
   // position: relative;
   // overflow: hidden;
@@ -45,6 +33,10 @@
         @include padding(padding-sm);
         padding: 5rem 1rem;
       }
+      .divider{
+        margin: 1rem 0;
+        border: 1px solid var(--color-white);
+      }
 
 
 
@@ -56,6 +48,7 @@
         color: var(--no-hero-text) !important;
         // text-transform: uppercase;
         @include typography(display-xl, bold);
+        text-transform: uppercase;
         @include desktop-small {
           @include typography(display-md, bold);
         }
@@ -63,7 +56,6 @@
     }
 
     .no-hero-breadcrumb {
-      display: none;
       margin-top: 1rem;
       width: 100%;
       text-align: center;

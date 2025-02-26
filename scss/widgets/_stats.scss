@@ -1,0 +1,111 @@
+$gradient-bg: linear-gradient(180deg, #121212 0%, #5458D7 100%);
+$gradient-bg-2: linear-gradient(180deg, #5458D7 0%, #121212 100%);
+$text-color: white;
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+.stats-section {
+    padding: 40px 20px;
+    padding-bottom: 0;
+    background: var(--color-secondary);
+
+    .text-lg-stat {
+        @include typography(display-xxl, bold);
+    }
+
+    .stat-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // flex: 1;
+        gap: 1rem;
+
+        &.card-4 {
+
+            .black-box {
+                border-radius: 32px;
+                width: 100%;
+                height: 147px !important;
+                background-color: rgba(35, 35, 35, 1);
+            }
+
+        }
+
+        .lg-card {
+            flex: 60%;
+        }
+
+        .md-card {
+            flex: 50%;
+        }
+
+
+        .mini-card {
+            flex: 40%;
+            padding: 3rem;
+        }
+    }
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: auto;
+}
+
+.stat-card {
+    border-radius: 32px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: $gradient-bg;
+    color: $text-color;
+    overflow: hidden;
+
+    .sm-card {
+        padding: 2rem;
+    }
+
+
+    &:nth-child(even) {
+        background: $gradient-bg-2;
+    }
+
+    @include mobile {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.stat-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 5px;
+}

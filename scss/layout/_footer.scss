@@ -1,7 +1,9 @@
 .footer-logo {
-  background-image: url(../../images/footer-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+  // background-image: url(../../images/footer-bg.png);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  background-color:var(--color-secondary);
   display: flex;
   padding: 4rem 0 0 0;
   justify-content: center;
@@ -104,6 +106,7 @@
         gap: 1.5rem;
       }
 
+
       .footer-contact {
         width: 30%;
         display: flex;
@@ -143,9 +146,30 @@
         justify-content: space-between;
         align-self: stretch;
 
+        &::after{
+          content: "";
+          position: absolute;
+          left: 33%;
+          top: 0;
+          width: 1px; /* Line thickness */
+          height: 100%;
+          background-color: white;
+      
+        }
+
         @include desktop-small {
           gap: 32px;
           margin-bottom: 48px;
+          &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px; /* Line thickness */
+            height: 100%;
+            background-color: white;
+        
+          }
         }
 
         .branding-text {
@@ -161,6 +185,8 @@
         align-items: flex-start;
         gap: 0.4375rem;
         align-self: stretch;
+        position: relative;
+
 
 
         .menu-item {
@@ -201,15 +227,16 @@
     align-items: flex-start;
     gap: 0.625rem;
     align-self: stretch;
-    // border-top: 1px solid var(--bg-body);
+    border-top: 1px solid var(--color-white);
     background: var(--panel-footer-bg);
     color: var(--panel-footer-text);
+    z-index: 999;
     @include desktop-small{
       margin-top: 0;
       padding: 2.5rem 1rem;
     }
     p {
-      color: var(--color-black);
+      color: var(--color-white);
       @include typography(text-sm, regular);
       @include desktop-small {
         @include typography(text-xs, regular);

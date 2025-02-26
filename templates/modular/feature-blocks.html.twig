@@ -1,47 +1,51 @@
 {% extends 'partials/variables.html.twig' %}
 
 {% set module = page.header.module %}
+{% set features = page.header.feature_blocks %}
 
 {% block render_block %}
-    <div class="features feature-animation">
-        <div class="container">
-			<div class="features-header-section">
-				{% if module.title %}
-					<h3 class="block-title">{{ module.title.translatable }}</h3>
-				{% endif %}
+	<section class="features-section slide-up animate">
+		<div class="container">
 
-				{% if page.content %}
-					<div class="features-section-description">
-						{{ page.content|raw }}
-					</div>
-				{% endif %}
+			<div class="features-wrapper">
+				<div class="features-header-area">
+					<h4>
+						{% if module.subtitle.translatable != null %}
+							{{ module.subtitle.translatable|striptags('<span>')|raw }}
+						{% endif %}
+						<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="2" viewbox="0 0 1180 2" fill="none">
+							<path d="M1 1L1179 1.0001" stroke="#8F8F8F" stroke-linecap="round"/>
+						</svg>
+					</h4>
+
+					{% if module.title.translatable != null %}
+						<h2>{{ module.title.translatable|striptags('<span>')|raw }}</h2>
+					{% endif %}
+					<span class="feature-desc">
+						{{ page.content|raw }}</span>
+				</div>
+				<div class="features-contents-area">
+					{% for featureItem in features %}
+						<div class="features-item {{ module.perRow }}">
+
+							<div class="features-item-content">
+								<h3>{{ featureItem.title.translatable }}</h3>
+								<p>{{ featureItem.description.translatable }}</p>
+							</div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="43" height="15" viewbox="0 0 43 15" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M36.3431 0.292893L42.7071 6.65685C43.0976 7.04738 43.0976 7.68054 42.7071 8.07107L36.3431 14.435C35.9526 14.8256 35.3195 14.8256 34.9289 14.435C34.5384 14.0445 34.5384 13.4113 34.9289 13.0208L39.5858 8.36396H1C0.447715 8.36396 0 7.91625 0 7.36396C0 6.81168 0.447715 6.36396 1 6.36396H39.5858L34.9289 1.70711C34.5384 1.31658 34.5384 0.683418 34.9289 0.292893C35.3195 -0.0976311 35.9526 -0.0976311 36.3431 0.292893Z" fill="#8F8F8F"/>
+							</svg>
+							<img src="{{ page.media[featureItem.image].url() }}"/>
+
+						</div>
+						<!-- End feature-Item -->
+					{% endfor %}
+
+				</div>
+
 			</div>
-        </div>
+			<!-- End feature-wrapper -->
+		</div>
+	</section>
 
-        <div class="features-container container">
-            <div class="feature-slider-controls">
-                <div class="control-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
-                        <path d="M0.47752 9.28658C0.0888729 9.67523 0.0888729 10.3246 0.47752 10.7142L9.44497 19.7047C9.8386 20.0983 10.477 20.0983 10.8696 19.7047C11.2632 19.311 11.2632 18.6717 10.8696 18.278L2.6145 9.99993L10.8706 1.72283C11.2642 1.3282 11.2642 0.689838 10.8706 0.295211C10.477 -0.0984196 9.83861 -0.0984196 9.44597 0.295211L0.47752 9.28658Z" fill="#191B1F"/>
-                    </svg>
-                </div>
-                <div class="control-right">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20" fill="none">
-                        <path d="M10.874 9.28658C11.2627 9.67523 11.2627 10.3246 10.874 10.7142L1.90659 19.7047C1.51296 20.0983 0.874597 20.0983 0.481963 19.7047C0.0883332 19.311 0.0883332 18.6717 0.481963 18.278L8.73706 9.99993L0.480967 1.72283C0.0873374 1.3282 0.0873374 0.689838 0.480967 0.295211C0.874597 -0.0984196 1.51296 -0.0984196 1.90559 0.295211L10.874 9.28658Z" fill="#191B1F"/>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="feature-slider-wrapper">
-                <div class="feature-track">
-                    {% for feature_block in page.header.feature_blocks %}
-                        {% if feature_block.description != '' and feature_block.title != '' %}
-                            {% include 'widgets/vertical-feature.html.twig' with {feature_block: feature_block, module:module } %}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="feature-slider-pagination"></div>
-    </div>
 {% endblock %}

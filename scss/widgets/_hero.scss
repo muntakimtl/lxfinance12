@@ -1,51 +1,61 @@
 @keyframes hero_twinkle {
   0% {
-      transform: scale(1) rotate(0deg);
-      opacity: 1;
-      filter: drop-shadow(0 0 5px var(--color-primary));
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--color-primary));
   }
+
   50% {
-      transform: scale(1.2) rotate(10deg);
-      opacity: 0.8;
-      filter: drop-shadow(0 0 15px var(--color-primary));
+    transform: scale(1.2) rotate(10deg);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px var(--color-primary));
   }
+
   100% {
-      transform: scale(1) rotate(0deg);
-      opacity: 1;
-      filter: drop-shadow(0 0 5px var(--color-primary));
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--color-primary));
   }
 }
+
 @keyframes rotate-wheel {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 @keyframes moveRight {
   0% {
     transform: translateX(-50px);
     opacity: 0.5;
   }
+
   50% {
     transform: translateX(10px);
     opacity: 1;
   }
+
   100% {
     transform: translateX(0);
     opacity: 0.8;
   }
 }
+
 @keyframes hypnotize {
   0% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
+
   50% {
-      transform: rotate(180deg);
+    transform: rotate(180deg);
   }
+
   100% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -55,9 +65,7 @@
   align-items: center;
   align-self: stretch;
 
-  background-image: url(../../images/hero_left_botom.svg);
-  background-position: left bottom;
-  background-repeat: no-repeat;
+  background-color: var(--color-secondary);
 
 
   @include desktop-small {
@@ -67,13 +75,17 @@
 
 
   h1 {
+    font-size: 5rem !important;
     max-width: 100%;
+
     @include desktop-small {
       @include typography(display-lg, bold);
     }
 
     @include typography(display-xl, bold);
-    color: var(--hero-title);
+    background: var(--hero-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     span {
       color: var(--hero-highlight) !important;
@@ -102,11 +114,11 @@
 
   .hero-container {
     display: flex;
-    @include padding(padding-lg);
+    // @include padding(padding-lg);
     justify-content: center;
     gap: 1.5rem;
-    padding-top: 1.15rem;
-    padding-bottom: 11rem;
+    padding-top: 64px;
+    padding-bottom: 64px;
 
 
     @include mobile {
@@ -120,11 +132,11 @@
       @include padding(padding-sm);
     }
 
-    .hero_text_center{
+    .hero_text_center {
       align-items: center;
     }
 
-    .hero_text_left{
+    .hero_text_left {
       flex: 1 0 40% !important;
     }
 
@@ -132,14 +144,7 @@
       display: flex;
       text-align: center;
       flex-direction: column;
-      padding-top: 8.125rem;
-      // max-width: 70%;
-
-      // border-radius: 0;
-      // border: 1px solid var(--color-white, #FFF);
-      // background: rgba(0, 0, 0, 0.50);
-      // backdrop-filter: blur(8px);
-      // padding: 2.625rem;
+      max-width: 1088px;
 
 
       @include desktop-small {
@@ -147,11 +152,14 @@
         // text-align: left;
         align-items: center;
         padding-top: 0rem;
+
         // padding: 2rem 1rem;
         .button {
-          // margin: 0 auto;
           color: var(--color-button);
-          background: var(--bg-button);
+
+          border-radius: 32px;
+          border: 1px solid var(--color-primary);
+          background: var(--color-primary);
         }
       }
 
@@ -166,10 +174,11 @@
       }
 
       .hero-title {
-        @include typography(display-2xl,bold);
+        @include typography(display-2xl, bold);
+
         @include mobile {
           font-style: normal;
-          @include typography(display-lg,bold);
+          @include typography(display-lg, bold);
         }
 
         color: var(--hero-title);
@@ -179,20 +188,20 @@
         display: flex;
         gap: 2rem;
         justify-content: center;
+
         @include mobile {
           gap: 0.625rem;
         }
 
       }
 
-      .button{
+      .button {
         align-self: center;
         display: flex;
         align-items: center;
-        border-radius: 8px;
         // border: 1px solid var(--color-white);
         padding: 16px 28px;
-        @include typography(text-lg,semibold);
+        @include typography(text-lg, regular);
 
         @include desktop-small {
           @include typography(text-lg, semibold);
@@ -200,6 +209,8 @@
 
         background: var(--bg-hero-button);
         color: var(--color-hero-button);
+        border-radius: 32px !important;
+        border: 1px solid var(--color-primary);
 
         svg {
           path {
@@ -207,17 +218,24 @@
           }
         }
       }
+
       gap: 2rem;
       flex: 1 0 60%;
     }
+
     .hero_buttons .button:nth-child(2) {
-      background: var(--color-hero-button);
-      color: var(--bg-hero-button);
-      border: 1px solid var(--bg-hero-button);
+      background: transparent;
+      background: var(--bg-hero-button);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: 1px solid;
+      border-color: var(--color-primary);
+border-radius: 32px;
+
       svg {
         display: none;
       }
-      
+
     }
 
     .hero-image-left {
@@ -239,6 +257,7 @@
         height: auto;
         display: block;
       }
+
       svg:nth-of-type(1) {
         position: absolute;
         top: 8%;
@@ -248,6 +267,7 @@
         z-index: 2;
         animation: hero_twinkle 1.5s infinite ease-in-out;
         transition: transform 0.3s ease-in-out;
+
         @include desktop-small {
           right: 5%;
         }
@@ -273,14 +293,15 @@
         z-index: 2;
         opacity: 0.9;
         animation: hypnotize 5s infinite linear;
-        transform-origin: center; 
+        transform-origin: center;
+
         @include desktop-small {
           display: none;
         }
       }
     }
 
-    .hero-image {      
+    .hero-image {
       flex: 1 0 30%;
       width: 100%;
       height: 100%;
@@ -308,12 +329,13 @@
         width: 137px;
         height: 137px;
         z-index: 2;
+
         @include mobile {
           top: 0%;
           width: 89px;
           height: 89px;
         }
- 
+
         animation: rotate-wheel 15s linear infinite;
       }
 
@@ -343,4 +365,3 @@
     }
   }
 }
-

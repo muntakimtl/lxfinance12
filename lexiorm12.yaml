@@ -4,7 +4,7 @@ streams:
      type: ReadOnlyStream
      prefixes:
        '':
-         - 'environment://themes/lexiorm08'
+         - 'environment://themes/lexiorm12'
          - 'user://themes/metricalo-base'
 
 enabled: true

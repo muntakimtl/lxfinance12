@@ -1,3 +1,28 @@
+<div class="menu {{ menu_order }}">
+	{% for page in pages.children.visible %}
+		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
+			{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+			{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
+
+			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
+				<div class="menu-item {{ current_page|e }}">
+					<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e }}">
+						{{ page.menu|e }}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	{% if grav.user.authenticated %}
+		<div class="menu-item {{ current_page|e }}">
+			<a class="menu-item__link {{navbar_text_color}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+		</div>
+	{% else %}
+		<div class="menu-item {{ current_page|e }}">
+				<a class="menu-item__link {{navbar_text_color}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+		</div>
+	{% endif %}
+</div>
 {# <div class="menu {{ menu_order }}">
 	{% for page in pages.children.visible %}
 		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
@@ -14,65 +39,3 @@
 		{% endif %}
 	{% endfor %}
 </div> #}
-
-
-<div class="main-menu dFlex">
-	<div class="language-modal-wrapper">
-	<!-- Language Modal -->
-		{% if grav.language.enabled and grav.language.languages|count > 1 %}
-			<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal"><img class="frame-29 lang-flag" src="{{ url('theme://images/lang/'~grav.language.active~'.svg') }}">{{ grav.language.active|upper }}
-				<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewbox="0 0 8 5" fill="none">
-					<path d="M3.64645 4.85355C3.84171 5.04882 4.15829 5.04882 4.35355 4.85355L7.53553 1.67157C7.7308 1.47631 7.7308 1.15973 7.53553 0.964466C7.34027 0.769204 7.02369 0.769204 6.82843 0.964466L4 3.79289L1.17157 0.964466C0.976311 0.769204 0.659728 0.769204 0.464466 0.964466C0.269204 1.15973 0.269204 1.47631 0.464466 1.67157L3.64645 4.85355ZM3.5 3.5L3.5 4.5L4.5 4.5L4.5 3.5L3.5 3.5Z" fill="#101828"/>
-				</svg>
-			</span>
-		{% endif %}
-		<!-- End Language Modal -->
-	</div>
-
-	<div class="offcanvas-nav">
-		<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-		<label for="menu-icon">
-			<img class="menu-toggle" id="menuToggle" src="{{ url('theme://images/menu-offcanvas.svg') }}"/>
-		</label>
-		<nav class="nav"> 	
-
-			<ul class="pt-5">
-
-				{% for page in pages.children.visible %}
-					{% if (page.home and not grav.user.authenticated) or (not page.home) %}
-						{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-						{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
-
-						{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
-							<li class="menu-item {{ current_page|e }}">
-								<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e }}">
-									{{ page.menu|e }}
-								</a>
-							</li>
-						{% endif %}
-					{% endif %}
-				{% endfor %}
-
-
-					{% if grav.user.authenticated %}
-						<li class=" {{ current_page|e }}">
-							<a class="logout-btn" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
-						</li>
-					{% else %}
-						<li class=" {{ current_page|e }}">
-							<a class="login-btn" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
-						</li>
-						<li class=" {{ current_page|e }}">
-							<a class="signup-btn" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
-						</li>
-					{% endif %}
-			</ul>
-		</nav>
-	</div>
-
-
-
-</div>
-
-
-

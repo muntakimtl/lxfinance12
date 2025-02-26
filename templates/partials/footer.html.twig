@@ -3,7 +3,9 @@
 		<div class="footer-logo-top">
 			<div class="footer-logo-area">
 				{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
-				<p class="branding-text service-description">Boost your career with expert-led soft skills training. Master communication, leadership, and teamwork to stand out in any professional setting.</p>
+				{% set words = data.descriptions[grav.language.getActive].description|split(' ')|slice(0, 25)|join(' ') %}
+
+				<p class="branding-text service-description">{{ words }}...</p>
 				{% include 'widgets/footer-card.html.twig' %}
 			</div>
 			
@@ -11,9 +13,8 @@
 			{% include 'widgets/footer-contact.html.twig' %}
 		</div>
 
-		{% include 'widgets/footer-copyright.html.twig' %}
 	</div>
-	
+			{% include 'widgets/footer-copyright.html.twig' %}
 </footer>
 
 <style>
