@@ -1,47 +1,14 @@
-@keyframes step-wheel {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes step_triangle {
+@keyframes glow-inner {
   0% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-
+    box-shadow: 0 0 5px rgba(144, 109, 249, 0.6);
   }
-
   50% {
-    transform: scale(1.04) rotate(5deg);
-    opacity: 1;
+    box-shadow: 0 0 15px rgba(84, 88, 215, 0.9);
   }
-
   100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-
+    box-shadow: 0 0 5px rgba(144, 109, 249, 0.6);
   }
 }
-
-
-@keyframes step-dots {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
 
 .steppers {
   padding: 5rem 0;
@@ -145,6 +112,7 @@
           border-radius: 50px;
 background: #BABCFF;
 padding: 8px;
+animation: glow-inner 2s infinite alternate ease-in-out; 
         }
 
         @include desktop-small {

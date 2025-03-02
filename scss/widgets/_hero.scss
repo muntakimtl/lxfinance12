@@ -75,14 +75,13 @@
 
 
   h1 {
-    font-size: 5rem !important;
+    @include typography(display-xl, bold);
     max-width: 100%;
 
     @include desktop-small {
-      @include typography(display-lg, bold);
+      @include typography(display-md, bold);
     }
 
-    @include typography(display-xl, bold);
     background: var(--hero-title);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -174,6 +173,7 @@
       }
 
       .hero-title {
+
         @include typography(display-2xl, bold);
 
         @include mobile {
@@ -191,6 +191,12 @@
 
         @include mobile {
           gap: 0.625rem;
+          flex-direction: column;
+          width: 100%;
+
+          .button {
+            width: 100%;
+          }
         }
 
       }
@@ -230,7 +236,7 @@
       -webkit-text-fill-color: transparent;
       border: 1px solid;
       border-color: var(--color-primary);
-border-radius: 32px;
+      border-radius: 32px;
 
       svg {
         display: none;

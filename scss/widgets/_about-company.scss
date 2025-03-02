@@ -1,3 +1,10 @@
+@keyframes glowAnimation {
+  0% { filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.5)); }
+  25% { filter: drop-shadow(0 0 15px rgba(0, 0, 255, 0.7)); }
+  50% { filter: drop-shadow(0 0 25px rgba(0, 0, 255, 1)); }
+  75% { filter: drop-shadow(0 0 10px rgba(0, 0, 255, 0.7)); }
+  100% { filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.5)); }
+}
 .about-company-wrapper {
   position: relative;
   overflow: hidden;
@@ -50,8 +57,7 @@
 
         color: var(--color-container-title);
         padding-top: 20px;
-        padding-left: 16px;
-        padding-right: 16px;
+
       }
 
       h4 {
@@ -91,11 +97,13 @@
       align-items: center;
       gap: 3rem;
       padding-top: 4rem;
-      @include padding(padding-lg);
       justify-content: space-between;
 
       @include desktop-small {
         justify-content: center;
+        .contents{
+          margin-top: -100px;
+        }
       }
 
       .contents {
@@ -120,6 +128,7 @@
           -webkit-text-fill-color: transparent;
     
           svg {
+            animation: glowAnimation 2s infinite ease-in-out;
             path {
               fill: #8F8F8F
             }
@@ -253,6 +262,7 @@
   .text_left {
     @include desktop-small {
       flex-direction: column !important;
+      
     }
   }
 

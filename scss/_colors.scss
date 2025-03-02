@@ -85,18 +85,18 @@
 
   --login-bg-container: var(--color-white);
   --login-bg: var(--color-primary);
-  --login-text: var(--color-text-dark);
+  --login-text: var(--color-white);
 
-  --profile-bg-container: var(--color-white);
+  --profile-bg-container: var(--color-secondary);
   --profile-bg: var(--color-white);
-  --profile-text: var(--color-text-dark);
+  --profile-text: var(--color-white);
 
-  --order-bg-container: var(--color-white);
-  --order-bg: var(--color-white);
-  --order-text: var(--color-text-dark);
+  --order-bg-container: var(--color-secondary);
+  --order-bg: var(--color-secondary);
+  --order-text:  var(--color-white);
 
-  --unsubscribe-bg-container: var(--color-white);
-  --unsubscribe-bg: var(--color-primary);
+  --unsubscribe-bg-container: var(--color-secondary);
+  --unsubscribe-bg: var(--color-secondary);
   --unsubscribe-title: var(--color-white);
   --unsubscribe-text: var(--color-text-dark);
   --unsubscribe-btn-text: var(--color-white);

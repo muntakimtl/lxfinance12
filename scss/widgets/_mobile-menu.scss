@@ -4,13 +4,37 @@
 
 @include desktop-small {
   #mobile-menu-icon {
-    display: block;
+    display: flex;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #FFF; /* White circular background */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #mobile-menu-icon::before {
+    content: "";
     background-image: url(../../images/menu.svg);
     background-repeat: no-repeat;
-    background-position: right;
-    height: 21px;
-    width: 40px;
+    background-position: center;
+    background-size: contain;
+    height: 20px;
+    width: 30px;
   }
+  
+  // #mobile-menu-icon {
+  //   display: block;
+  //   background-image: url(../../images/menu.svg);
+  //   background-repeat: no-repeat;
+  //   background-position: right;
+  //   height: 21px;
+  //   width: 40px;
+  //   border-radius: 50px;
+  //   background-color: #FFF;
+  
+  // }
 
   .cheeseburger-menu {
     display: block;
@@ -84,6 +108,7 @@
       .btn {
         padding: 12px 16px;
         color: var(--mobile-menu-color-button);
+        border-radius: 32px;
         background-color: unset;
         // border:1px solid var(--mobile-menu-color-signup-button);
         font-size: var(--text-font-size);

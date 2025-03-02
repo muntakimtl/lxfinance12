@@ -23,7 +23,8 @@
 }
 
 .contact-block-section {
-  background: var(--color-white);
+  background: var(--color-secondary);
+  color: var(--color-white);
   padding: 100px 0;
   position: relative;
 
@@ -147,17 +148,15 @@
         column-gap: 12px;
 
         @include desktop-small {
-
+          justify-content: center;
         }
 
         .contact-block-item{
-          min-width: 200px;
-          width: calc(100% - 0rem);
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: start;
-          background-color: var(--color-bg-body, #F5F5F5);
+          align-items: center;
+          background-color: var(--color-secondary);
           padding: 1.5rem;
           opacity: 0;
           gap: 20px;
@@ -199,6 +198,7 @@
 
           .contact-icon{
             display: flex;
+            flex-direction: column;
             gap: 20px;
             align-items: center;
             h2{

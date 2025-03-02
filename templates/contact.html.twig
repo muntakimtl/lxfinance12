@@ -16,8 +16,10 @@
     } %}
 
     <!-- Dynamic modular -->
+    <div class="contact-section-wrapper">
     {% for module in page.collection() %}
         {{ module.content|raw }}
     {% endfor %}
+    </div>
 
 {% endblock %}

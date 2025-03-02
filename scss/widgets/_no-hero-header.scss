@@ -24,9 +24,9 @@
   .paragraph.no-hero {
     //background: var(--no-hero-bg);
 
-    @include desktop-small {
-      margin-top: $header-gap;
-    }
+    // @include desktop-small {
+    //   margin-top: $header-gap;
+    // }
     .no-hero-title-wrapper {
       padding: 6.25rem 1rem;
             @include desktop-small {

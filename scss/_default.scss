@@ -27,6 +27,14 @@ body {
 }
 
 
+.form-field input[type="text"],input[type="password"],textarea {
+  background: transparent;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  color: var(--color-grey) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--color-grey) !important;
+border-radius: 0 !important;
+}
 
 img {
   transition: transform 0.3s ease-out;
@@ -95,25 +103,25 @@ h6 span {
   overflow: hidden;
   z-index: 1;
 
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 0%;
-  //   height: 100%;
-  //   background-color: var(--color-secondary);
-  //   transition: all 0.3s;
-  //   z-index: -1;
-  // }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    transition: all 1s;
+    z-index: -1;
+  }
 
-  // &:hover {
-  //   color: var(--color-white) !important;
-  // }
+  &:hover {
+    color: var(--color-white) !important;
+  }
 
-  // &:hover::before {
-  //   width: 100%;
-  // }
+  &:hover::before {
+    width: 100%;
+  }
 
 }
 
@@ -333,6 +341,7 @@ textarea::placeholder {
   opacity: 0;
   /* Initially invisible */
   transform: translateY(30px);
+  transition: opacity 2s ease, transform 0.5s ease;
   /* Start slightly below */
 }
 

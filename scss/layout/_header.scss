@@ -163,6 +163,7 @@
           background-size: 24px;
           height: 24px;
           width: 24px;
+          filter: invert(1);
         }
       }
     }
@@ -178,11 +179,11 @@
   height: auto;
 }
 
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
+// [type="checkbox"]:checked,
+// [type="checkbox"]:not(:checked) {
+//   position: absolute;
+//   left: -9999px;
+// }
 
 
 .menu-icon:checked+label,

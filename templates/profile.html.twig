@@ -14,7 +14,7 @@
 
 {% block content %}
 
-  {% include 'partials/no-hero-header.html.twig' with {
+	{% include 'partials/no-hero-header.html.twig' with {
     'title': page.header.title,
     'links': [
       {
@@ -27,39 +27,49 @@
     ]
   } %}
 
-  {% include 'partials/messages.html.twig' %}
-  <div class="max-w-6xl mx-auto rounded-lg bg-white shadow-2xl shadow-gray-300 border border-gray-200 p-12 slide-up main-container">
+	{% include 'partials/messages.html.twig' %}
+	<div class="slide-up main-container profile-page">
 
+		<div class="content-section-container container">
+			<div class="content-section-profile">
 
-    <div class="content-section-profile">
+				<div class="paragraph-column">
+					<h2 class="text-4xl font-bold mb-8 text-brand">
+						{{ 'METRICALO.PROFILE'|t }}
+					</h2>
+					{% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
+					<div class="form-actions flex justify-between space-x-2">
+						<a href="{{ url(grav.language.getActive ~ '/profile/change-password') }}" class="button primary no-underline">
+							{{ 'METRICALO.CHANGE_PASSWORD'|t }}
+						</a>
+						<button form="user-profile" type="submit" class="button primary">
+							{{ 'METRICALO.EDIT_PROFILE'|t }}
+						</button>
+					</div>
 
-      <div class="paragraph-column">
-        <h2 class="text-4xl font-bold mb-8 text-brand">
-          {{ 'METRICALO.PROFILE'|t }}
-        </h2>
-        {% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
-        <div class="form-actions flex justify-between space-x-2">
-          <a href="{{ url(grav.language.getActive ~ '/profile/change-password') }}" class="button primary no-underline">
-            {{ 'METRICALO.CHANGE_PASSWORD'|t }}
-          </a>
-          <button form="user-profile" type="submit" class="button primary">
-            {{ 'METRICALO.EDIT_PROFILE'|t }}
-          </button>
-        </div>
-
-        <div class="mb-8 content-section">
-          <a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
-            {{ 'METRICALO.MY_ORDERS'|t }}{{ icon('arrow-right', 'h3 w-3 ml-1')|raw }}
-          </a>
-        </div>
-      </div>
-
-      <div class="paragraph-column">
-        <h2 class="text-4xl font-bold mb-8 text-brand">
-          {{ 'METRICALO.SUBSCRIPTION'|t }}
-        </h2>
-        {% include 'partials/subscription.html.twig' %}
-      </div>
-    </div>
-  </div>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" width="2" height="608" viewbox="0 0 2 608" fill="none">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M1 0.000122114C1.55228 0.00012209 2 0.447837 2 1.00012L2.00003 607C2.00003 607.552 1.55231 608 1.00003 608C0.447742 608 2.6557e-05 607.552 2.65328e-05 607L4.37114e-08 1.00012C1.95703e-08 0.447837 0.447715 0.000122138 1 0.000122114Z" fill="#8F8F8F"/>
+				</svg>
+				<div class="paragraph-column">
+					<div class="mb-8 content-section">
+						<a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
+							{{ 'METRICALO.MY_ORDERS'|t }}{{ icon('arrow-right', 'h3 w-3 ml-1')|raw }}
+						</a>
+					</div>
+					<div class="sub-title">
+						<svg xmlns="http://www.w3.org/2000/svg" width="560" height="2" viewbox="0 0 560 2" fill="none">
+							<path d="M1 0.728027H559" stroke="#8F8F8F" stroke-linecap="round"/>
+						</svg>
+						<h4>
+							{{ 'METRICALO.SUBSCRIPTION'|t }}</h4>
+						<svg xmlns="http://www.w3.org/2000/svg" width="560" height="2" viewbox="0 0 560 2" fill="none">
+							<path d="M1 0.728027H559" stroke="#8F8F8F" stroke-linecap="round"/>
+						</svg>
+					</div>
+					{# {% include 'partials/subscription.html.twig' %} #}
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
