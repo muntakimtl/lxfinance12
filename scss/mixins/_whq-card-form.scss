@@ -25,7 +25,7 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
         text-align: center;
         background: $title-bg;
         color: $title-color;
-        border-radius: 8px 8px 0px 0px;
+        border-radius: 0px 32px 0px 0px !important;
 
         @include desktop-small {
           padding: 2rem 1rem;

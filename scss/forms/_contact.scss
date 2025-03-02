@@ -17,7 +17,7 @@ form[name="contact-us"] {
   }
   .form-field:nth-child(1),
   .form-field:nth-child(2) {
-    width: calc(50% - 1rem);
+    width: calc(50% - 0.5rem);
     /* Adjust width based on your design */
     display: inline-block;
     @include desktop-small {
