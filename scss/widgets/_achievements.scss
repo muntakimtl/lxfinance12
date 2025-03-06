@@ -1,0 +1,70 @@
+.achievements{
+    background: var(--color-secondary);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+
+    h4 {
+        span{
+            background: var(--color-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .achievemens-text-container{
+        display: flex;
+        justify-content: space-between;
+
+
+        
+        @include mobile{
+            flex-direction: column;
+        }
+        .achievement-title{
+            flex:1;
+            max-width: 676px;
+        }
+        .achievement-desc{
+            flex:1;
+            max-width: 490px;
+        }
+    }
+    .paragraph-image-container{
+        display: flex;
+        gap: 0;
+        border-radius: 32px 0px 0px 32px;
+        margin: 2.5rem 0;
+        justify-content: space-between;
+
+        @include desktop-small{
+            flex-direction: column;
+        }
+        .score-container{
+            background-color: var(--color-tertiary);
+            padding: 64px;
+            display: flex;
+            flex: 30%;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 32px 0 0 32px;
+
+            .score-card{
+                h2{
+                    @include typography(display-xxl, bold);
+                }
+
+                &:nth-child(2) {
+                    border-top: 1px solid var(--color-white);
+                  }
+                  &:nth-child(3) {
+                    border-top: 1px solid var(--color-white);
+                  }
+            }
+        }
+        .score-image{
+            flex: 70%;
+        }
+    }
+
+}

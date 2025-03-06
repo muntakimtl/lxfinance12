@@ -1,0 +1,110 @@
+
+
+.no-hero-header {
+  background: var(--color-secondary);
+
+  // position: relative;
+  // overflow: hidden;
+  // ::before{
+  //   position: absolute;
+  //   content: "";
+  //   box-shadow: 0 0 100px 40px #ffffff08;
+  //   top: -100%;
+  //   left: -100%;
+  //   transform: rotate(-45deg);
+  //   height: 30rem;
+  //   // width: 30rem;
+  //   // transition: .7s all;
+  //   background: transparent;
+  //   animation: slideIn 1.5s ease-in-out forwards;
+  // }
+
+
+  /* User pages */
+  .paragraph.no-hero {
+    //background: var(--no-hero-bg);
+
+    // @include desktop-small {
+    //   margin-top: $header-gap;
+    // }
+    .no-hero-title-wrapper {
+      padding: 6.25rem 1rem;
+            @include desktop-small {
+        @include padding(padding-sm);
+        padding: 5rem 1rem;
+      }
+      .divider{
+        margin: 1rem 0;
+        border: 1px solid var(--color-white);
+      }
+
+
+
+
+      h1 {
+        text-align: center;
+        word-wrap: break-word;
+        // font-family: var(--default-font-2);
+        color: var(--no-hero-text) !important;
+        // text-transform: uppercase;
+        @include typography(display-xl, bold);
+        text-transform: uppercase;
+        @include desktop-small {
+          @include typography(display-md, bold);
+        }
+      }
+    }
+
+    .no-hero-breadcrumb {
+      margin-top: 1rem;
+      width: 100%;
+      text-align: center;
+      // display: none;
+
+      ol {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 0;
+        //margin-bottom: 1rem;
+        list-style: none;
+        border-radius: 0;
+        color: var(--no-hero-text);
+
+        .breadcrumb-item {
+          display: flex;
+          align-items: center;
+          @include typography(text-xl, regular);
+          @include desktop-small {
+            @include typography(text-lg, regular);
+          }
+          color: var(--no-hero-text) !important;
+
+          a {
+            text-decoration: none;
+            color: var(--no-hero-text) !important;
+            @include typography(text-xl, regular);
+            @include desktop-small {
+              @include typography(text-lg, regular);
+            }
+          }
+
+          &+.breadcrumb-item::before {
+            float: none;
+            padding-right: 0.25rem;
+            content: "";
+          }
+
+          &.arry svg {
+            display: inline-block;
+            @include typography(text-xs);
+          }
+        }
+      }
+    }
+  }
+
+}
+
+

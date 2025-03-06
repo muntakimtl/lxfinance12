@@ -1,0 +1,26 @@
+title: Contact
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.contact_title_section:
+              ordering@: 4
+              type: section
+              title: Contact Title Section
+              underline: false
+              label: false
+              fields:
+                header.modules.title.translatable:
+                  type: text
+                  label: Title
+                  classes: 'translatable'
+                header.modules.subtitle.translatable:
+                  type: text
+                  label: Subtitle
+                  classes: 'translatable'
+            header.media_order:
+              ordering@: 99

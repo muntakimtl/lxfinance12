@@ -1,0 +1,17 @@
+
+<div class="pricing">
+	<div class="pricing-content">
+		{% include 'partials/product_pricing/widget/_recommended_tag.html.twig' %}
+		<div class="price">
+			{% include 'partials/product_pricing/widget/_package_title.html.twig' %}
+         <div class="price_icon-container">
+			<div class="price_icon">
+				<img class="icon" src="{{ url('theme://images/pricing-1.svg') }}"/>
+			</div>
+         </div>
+			{% include 'partials/product_pricing/widget/_pricing_section.html.twig' %}
+		</div>
+		{% include 'partials/product_pricing/widget/_benefits.html.twig'  %}
+	</div>
+	{% include 'partials/product_pricing/widget/_signup_btn.html.twig'  %}
+</div>

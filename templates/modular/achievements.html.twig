@@ -1,0 +1,34 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{% set image = page.media[module.image] %}
+{% set scores = page.header.scores %}
+
+{% block render_block %}
+	<div class="paragraph achievements text-right-animation {{ module.classes }}">
+		<div class="container achievements-container">
+			<div class="achievemens-text-container">
+				<div class="achievement-title">
+					<div class="block-title">
+						<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+					</div>
+				</div>
+				<div class="achievement-desc">
+					<p>{{ page.content|raw }}</p>
+				</div>
+			</div>
+			<div class="paragraph-image-container">
+				<div class="score-container">
+					{% for score in scores %}
+						<div class="score-card">
+							<h2>{{ score.title.translatable }}</h2>
+							<p>{{ score.description.translatable }}</p>
+							
+						</div>
+					{% endfor %}
+				</div>
+				<img class="score-image" src="{{ image.url }}" alt="icon"/>
+			</div>
+		</div>
+	</div>
+{% endblock %}

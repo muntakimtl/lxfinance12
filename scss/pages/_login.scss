@@ -1,0 +1,181 @@
+
+
+.login-section.animate {
+  // background: var(--bg-body);
+  padding: 5rem 1rem;
+
+  @include desktop-small {
+    padding: 4rem 1rem;
+  }
+}
+.login-section{
+  margin: 2rem ;
+  .container {
+    display: flex !important;
+    flex-wrap: wrap;
+    @include desktop-small {
+    flex-direction: column;
+    .whq-card{
+      max-width: 100% !important;
+    }
+    }
+
+    .login-img-section{
+      flex: 1;
+      img{
+        width: 100%;
+      }
+    }
+
+    .whq-card {
+      margin-left: 0;
+      flex: 1;
+      margin: 0 !important;
+      background-color: var(--color-secondary);
+      .whq-card-title{
+        margin: 0;
+      }
+      h4 {
+        @include typography (display-xs, bold);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 18px;
+  
+        background: var(--color-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+  
+        svg {
+          path {
+            fill: #8F8F8F
+          }
+        }
+      }
+      h3{
+        color: var(--color-white);
+        font-size: 30px;
+font-style: normal;
+font-weight: 500;
+      }
+    }
+  }
+}
+
+.login-section,
+.forgot-section {
+  background-color: var(--login-bg-container);
+  padding-top: 6.25rem;
+  margin: 2rem ;
+  border-radius: 8px 8px 0px 0px;
+
+  &.forgot-section .whq-card-content #grav-login {
+
+    &>h1,
+    &>p {
+      display: none;
+    }
+  }
+
+
+  @include whq-card-form($text-color: var(--unsubscribe-text),
+    $title-bg: var(--unsubscribe-bg),
+    $title-color: var(--unsubscribe-title),
+    $card-shadow: (0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)),
+    $border-radius: 8px,
+    $spacing: 6.25rem,
+    $title_typography: (size: display-xs, weight: semibold),
+    $button_typography: (size: text-md, weight: semibold),
+    $label_typography: (size: text-md, weight: semibold),
+    $input_styles: (border: 1px solid var(--login-text), background: transparent, text: var(--login-text)),
+  );
+
+  #grav-login {
+    .form-field:first-child {
+      &:before {
+        display: block;
+        @include typography(text-md, semibold);
+      }
+    }
+
+    .form-field:nth-child(2) {
+      &:before {
+        display: block;
+        @include typography(text-md, semibold);
+
+      }
+    }
+  }
+
+  .form-actions {
+    display: block;
+    flex-direction: column;
+    gap: 2rem;
+
+    .form-data.rememberme {
+      margin-top: 15px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      .form-input-wrapper {
+        display: flex;
+        align-items: center;
+
+        input[type="checkbox"] {
+          width: auto;
+          appearance: auto;
+          display: inline-block;
+        }
+
+        label {
+          @include typography(text-sm, medium);
+          color: var(--login-text);
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .form-action-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+
+
+      .secondary {
+        max-width: 300px;
+        align-self: end;
+        margin-top: -1.3rem;
+        text-decoration: none;
+        padding: 0;
+        @include typography(text-sm, semibold);
+        color: var(--login-text);
+        background-color: transparent !important;
+        background: transparent !important;
+
+        &.button {
+
+          &:after,
+          &:before {
+            content: none;
+          }
+
+          &:hover {
+            box-shadow: none;
+            color: var(--color-primary) !important;
+            transform: translateY(0);
+          }
+        }
+      }
+
+      .primary {
+        width: 100%;
+        background: var(--bg-button);
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{% extends 'partials/variables.html.twig' %}
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+{% set image_top_left = page.media[module.image_top_left] %}
+{% set image_bottom_left = page.media[module.image_bottom_left] %}
+
+
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+	<section class="contact-block-section {{ module.classes }}">
+		<div class="container">
+			<div class="contact-block-wrapper">
+				<div class="contact-block-content-parent">
+					<div class="contact-block-content-area">
+						{% for contactItem in contents %}
+							<div class="contact-block-item">
+								<div class="contact-icon">
+									<img src="{{ page.media[contactItem.icon].url() }}" alt=""/>
+									<p>{{ contactItem.description.translatable|raw }}</p>
+
+									{% if contactItem.title.translatable != null %}
+										<h2>{{ contactItem.title.translatable|striptags('<span>')|raw }}</h2>
+									{% endif %}
+
+								</div>
+
+							</div>
+							<!-- End contact-block-item -->
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

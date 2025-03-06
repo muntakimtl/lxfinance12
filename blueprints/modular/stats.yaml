@@ -1,0 +1,24 @@
+title: Offer
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+                ordering@: 99
+            html_section:
+              type: section
+              title: HTML Section
+              underline: true
+              fields:
+  
+                header.html.translatable:
+                  type: textarea
+                  label: HTML Content
+                  classes: 'translatable'

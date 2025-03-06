@@ -1,0 +1,55 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+	<div class="steppers" id="how-it-works">
+		<div class="container">
+			<div class="steppers-header-section">
+				
+
+				{% if module.subtitle %}
+					<h4>
+						{% if module.subtitle.translatable != null %}
+						<div>	{{ module.subtitle.translatable|striptags('<span>')|raw }}</div>
+						{% endif %}
+						<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="2" viewbox="0 0 1180 2" fill="none">
+							<path d="M1 1L1179 1.0001" stroke="#8F8F8F" stroke-linecap="round"/>
+						</svg>
+					</h4>
+
+				{% endif %}
+
+				{% if module.title %}
+					<h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw  }}</h3>
+				{% endif %}
+
+				{% if module.description %}
+					<p>{{ module.description.translatable }}</p>
+				{% endif %}
+			</div>
+
+			<div class="steppers-container">
+				{% for stepper_block in page.header.stepper_blocks %}
+					{% if stepper_block.description != '' and stepper_block.title != '' %}
+						
+						<div class="stepper flex-row-3">
+							<div class="steps_icon" >
+								{% set icon = page.media[stepper_block.icon] %}
+								<img class="icon" src="{{ icon.url }}"/>
+							    <h2>{{ '%02d'|format(loop.index) }}</h2>
+							</div>
+							<div class="steps_content" >
+									<h4  class="stepper-title">{{ stepper_block.title.translatable }}</h4>
+									<p class="stepper-description">{{ stepper_block.description.translatable }}</p>	
+							</div>
+						</div>
+
+					{% endif %}
+				{% endfor %}
+			</div>
+
+		</div>
+		
+	</div>
+{% endblock %}

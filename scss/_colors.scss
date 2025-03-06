@@ -1,0 +1,140 @@
+:root {
+
+  // For Text
+  --text-font-size: 1rem;
+  --text-sm-font-size: 0.75rem;
+  --text-md-font-size: 1.125rem;
+  --text-lg-font-size: 1.5rem;
+  --text-error-font-size: 1rem;
+
+  // For Title
+  --title-font-size: 1.25rem;
+  --title-md-font-size: 2rem;
+  --title-lg-font-size: 2.5rem;
+  --title-xl-font-size: 3.2rem;
+  --subtitle-font-size: 1.1rem;
+  --title-mobile-menu-font-size: 1rem;
+
+  --shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+
+  --color-white: #FFFFFF;
+  
+  --color-primary: linear-gradient(180deg, #5458D7 0%, #906DF9 100%);
+  --color-primary-light: linear-gradient(180deg, rgba(84, 88, 215, 0.30) 0%, rgba(144, 109, 249, 0.30) 100%);
+  --color-secondary: #111;
+  --color-tertiary: #2B2B2B;
+  --bg-body: #FFF;
+  // --bg-secondary: #F5F5F5;
+  // --border-color: #98A2B3;
+
+  --color-text-light: #FFF;
+  --color-text-dark: #111; 
+  --color-black: #111;
+  --color-grey: #8F8F8F;
+
+
+  --panel-header-bg: var(--color-secondary);
+  --panel-header-text: var(--color-text-dark);
+  --panel-footer-bg: var(--color-secondary);
+  --panel-footer-text: var(--color-white);
+  
+  --hero-bg-container: var(--color-primary);
+  --hero-bg: var(--color-secondary);
+  --hero-title: var(--color-primary);
+  --hero-text: var(--color-text-light);
+  --hero-highlight: var(--color-primary);
+
+  --color-section-title: var(--color-text-dark);
+  --color-section-subtitle: var(--color-secondary);
+
+  --feature-bg-container: var(--color-secondary);
+  --feature-bg: var(--color-secondary);
+  --feature-text: var(--color-white);
+
+  --course-bg-container: var(--bg-body);
+  --course-bg: var(--color-text-light);
+  --course-title: var(--color-primary);
+  --course-text: var(--color-primary);
+
+  --about-listing-bg-container: var(--color-text-light);
+  --about-listing-title: var(--color-primary);
+  --about-listing-text: var(--color-primary);
+  --color-about-company-sub-title: var(--color-secondary);
+
+  // --text-bg-container: var(--bg-body);
+  --text-bg-container: var(--color-black);
+  --text-bg: var(--bg-body);
+  --text-text: var(--color-black);
+  
+  --pricing-bg-container: var(--bg-secondary);
+  --pricing-bg: var(--color-white);
+  --pricing-text: var(--color-text-dark);
+  --color-pricing-title: var(--color-primary);
+
+
+  // Contact us page
+  --contact-bg-container: var(--color-white);
+  --contact-form-bg: var(--color-primary);
+  --contact-form-text: var(--color-text-dark);
+  --contact-info-bg: var(--bg-body);
+  --contact-info-text: var(--color-white);
+
+  --no-hero-bg-container: var(--color-primary);
+  --no-hero-bg: var(--color-primary);
+  --no-hero-text: var(--color-white);
+
+  --login-bg-container: var(--color-white);
+  --login-bg: var(--color-primary);
+  --login-text: var(--color-white);
+
+  --profile-bg-container: var(--color-secondary);
+  --profile-bg: var(--color-white);
+  --profile-text: var(--color-white);
+
+  --order-bg-container: var(--color-secondary);
+  --order-bg: var(--color-secondary);
+  --order-text:  var(--color-white);
+
+  --unsubscribe-bg-container: var(--color-secondary);
+  --unsubscribe-bg: var(--color-secondary);
+  --unsubscribe-title: var(--color-white);
+  --unsubscribe-text: var(--color-text-dark);
+  --unsubscribe-btn-text: var(--color-white);
+  --unsubscribe-btn-bg: var(--color-primary);
+  --unsubscribe-input-border: 8px;
+
+  --policy-bg-container: var(--bg-body);
+  
+  --bg-button: var(--color-primary);
+  --bg-hero-button: var(--color-primary);
+  --bg-pricing-button: var(--color-primary);
+
+  --bg-contact-btn: var(--color-primary);
+  --color-contact-btn: var(--color-white);
+
+  --bg-profile-btn: var(--color-primary);
+  --color-profile-btn: var(--color-white);
+
+  --bg-global-btn: var(--color-white);
+  --color-global-btn: var(--color-primary);
+
+  --color-button: var(--color-white);
+  --color-hero-button: var(--color-white);
+  --color-pricing-button: var(--color-white);
+
+  --bg-alternate-button: var(--color-white);
+  --color-alternate-button: var(--color-primary);
+
+  --color-lang-switcher: var(--color-white);
+  --border-lang-switcher: var(--color-black);
+
+  --mobile-menu-bg-container: var(--color-white);
+  --mobile-menu-text: var(--color-text-dark);
+  --mobile-menu-bg-button: var(--color-primary);
+  --mobile-menu-color-button: var(--color-white);
+  --mobile-menu-bg-signup-button: var(--color-white);
+  --mobile-menu-color-signup-button: var(--color-white);
+}
+
+$label_error: #d55353;
+$field_background_disabled: #fff;

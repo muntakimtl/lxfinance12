@@ -1,0 +1,11 @@
+.contact-section-wrapper {
+  background: var(--contact-bg-container);
+  .contact-form,.contact-block-section{
+    background: var(--contact-bg-container) !important;
+    color: var(--color-secondary);
+  }
+  .contact-block-item {
+    background-color: transparent !important;
+  }
+}
+

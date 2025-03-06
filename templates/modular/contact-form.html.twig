@@ -1,0 +1,27 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.modules %}
+
+{% block render_block %}
+	<div class="contact-form">
+		{% if module.subtitle is not empty %}
+			<div class="sub-title">
+				<svg xmlns="http://www.w3.org/2000/svg" width="560" height="2" viewbox="0 0 560 2" fill="none">
+					<path d="M1 0.728027H559" stroke="#8F8F8F" stroke-linecap="round"/>
+				</svg>
+				<h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+				<svg xmlns="http://www.w3.org/2000/svg" width="560" height="2" viewbox="0 0 560 2" fill="none">
+					<path d="M1 0.728027H559" stroke="#8F8F8F" stroke-linecap="round"/>
+				</svg>
+			</div>
+		{% endif %}
+		<div class="contact-block-header">
+			{% if module.title %}
+				<h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+			{% endif %}
+		</div>
+		<div class="container">
+			{% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
+		</div>
+	</div>
+{% endblock %}

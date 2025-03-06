@@ -1,0 +1,51 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+{% set features = page.header.feature_blocks %}
+
+{% block render_block %}
+	<section class="features-section slide-up animate">
+		<div class="container">
+
+			<div class="features-wrapper">
+				<div class="features-header-area">
+					<h4>
+						{% if module.subtitle.translatable != null %}
+							{{ module.subtitle.translatable|striptags('<span>')|raw }}
+						{% endif %}
+						<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="2" viewbox="0 0 1180 2" fill="none">
+							<path d="M1 1L1179 1.0001" stroke="#8F8F8F" stroke-linecap="round"/>
+						</svg>
+					</h4>
+
+					{% if module.title.translatable != null %}
+						<h2>{{ module.title.translatable|striptags('<span>')|raw }}</h2>
+					{% endif %}
+					<span class="feature-desc">
+						{{ page.content|raw }}</span>
+				</div>
+				<div class="features-contents-area">
+					{% for featureItem in features %}
+						<div class="features-item {{ module.perRow }}">
+
+							<div class="features-item-content">
+								<h3>{{ featureItem.title.translatable }}</h3>
+								<p>{{ featureItem.description.translatable }}</p>
+							</div>
+							<svg xmlns="http://www.w3.org/2000/svg" width="43" height="15" viewbox="0 0 43 15" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M36.3431 0.292893L42.7071 6.65685C43.0976 7.04738 43.0976 7.68054 42.7071 8.07107L36.3431 14.435C35.9526 14.8256 35.3195 14.8256 34.9289 14.435C34.5384 14.0445 34.5384 13.4113 34.9289 13.0208L39.5858 8.36396H1C0.447715 8.36396 0 7.91625 0 7.36396C0 6.81168 0.447715 6.36396 1 6.36396H39.5858L34.9289 1.70711C34.5384 1.31658 34.5384 0.683418 34.9289 0.292893C35.3195 -0.0976311 35.9526 -0.0976311 36.3431 0.292893Z" fill="#8F8F8F"/>
+							</svg>
+							<img src="{{ page.media[featureItem.image].url() }}"/>
+
+						</div>
+						<!-- End feature-Item -->
+					{% endfor %}
+
+				</div>
+
+			</div>
+			<!-- End feature-wrapper -->
+		</div>
+	</section>
+
+{% endblock %}

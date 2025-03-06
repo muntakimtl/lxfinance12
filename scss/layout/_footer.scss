@@ -1,0 +1,239 @@
+.footer-logo {
+  position: relative;
+  // background-image: url(../../images/footer-bg.png);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  background-color:var(--color-secondary);
+  display: flex;
+  padding: 4rem 0 0 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  align-self: stretch;
+  @include desktop-small{
+    padding: 3rem 0 0 0;
+  }
+
+  .footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    @include padding(padding-lg);
+
+    @include desktop-small {
+      //padding: 2rem;
+      @include padding(padding-sm);
+      flex-direction: column;
+    }
+
+    .logo-container {
+      padding: 0;
+      justify-content: start;
+      align-items: start;
+      background: transparent !important;
+    }
+
+    .title {
+      // font-family: var(--default-font-2);
+      @include typography(display-xs, bold);
+      color: var(--panel-footer-text) !important;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 21px;
+        height: 3px;
+        background: var(--color-primary);
+        bottom: -16px;
+        left: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 45px;
+        height: 3px;
+        background: var(--color-primary);
+        bottom: -16px;
+        left: 50px;
+      }
+
+      @include desktop-small {
+        @include typography(text-xl, medium);
+      }
+    }
+    .frame-24 {
+      margin-top: 16px;
+    }
+    .flexcontainer {
+      margin-top: 16px;
+    }
+
+    p {
+      @include typography(text-xl, regular);
+      @include desktop-small {
+        @include typography(text-md, semibold);
+      }
+      padding: 6px 0;
+      color: var(--color-white);
+    }
+
+    a {
+      color: var(--panel-text) !important;
+      text-decoration: none;
+      @include typography(text-xl, regular);
+      @include desktop-small {
+        @include typography(text-md, regular);
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    
+    .footer-logo-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-self: stretch;
+
+      @include desktop-small {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+
+      .footer-contact {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+
+        @include desktop-small {
+          width: 100%;
+        }
+
+        p, a {
+          @include typography(text-xl, regular);
+
+          @include desktop-small {
+            @include typography(text-md, regular);
+          }
+          color: var(--panel-footer-text) !important;
+        }
+
+        p {
+          b {
+            font-weight: normal;
+          }
+        }
+      }
+
+      .logo {
+        max-width: 180px;
+        height: auto;
+      }
+
+      .footer-logo-area{
+        flex-basis: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: stretch;
+        border-right: 1px solid var(--color-white);
+
+
+        @include desktop-small {
+          gap: 32px;
+          margin-bottom: 48px;
+          &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px; /* Line thickness */
+            height: 100%;
+            background-color: white;
+        
+          }
+        }
+
+        .branding-text {
+          @include desktop-small {
+            @include typography(text-lg, regular);
+          }
+        }
+      }
+
+      .footer-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4375rem;
+        align-self: stretch;
+        position: relative;
+
+
+
+        .menu-item {
+          display: flex;
+          padding: 6px 0;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.625rem;
+          @include typography(text-lg, regular);
+          @include desktop-small {
+            @include typography(text-md, regular);
+          }
+          color: var(--panel-footer-text) !important;
+        }
+      }
+    }
+
+    .footer-cards {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: left;
+      gap: 1rem;
+      @include desktop-small {
+        width: 100%;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+    border-top: 1px solid var(--color-white);
+    background: var(--panel-footer-bg);
+    color: var(--panel-footer-text);
+    z-index: 999;
+    @include desktop-small{
+      margin-top: 0;
+      padding: 2.5rem 1rem;
+    }
+    p {
+      color: var(--color-white);
+      @include typography(text-sm, regular);
+      @include desktop-small {
+        @include typography(text-xs, regular);
+      }
+      text-align: center;
+
+    }
+  }
+}

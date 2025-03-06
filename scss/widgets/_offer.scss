@@ -1,0 +1,117 @@
+.offer {
+  display: flex;
+  padding: 6.25rem 0;
+  align-items: center;
+  align-self: stretch;
+  background-color: var(--color-white);
+
+  position: relative;
+  overflow: hidden;
+  
+  ::before{
+    position: absolute;
+    content: "";
+    box-shadow: 0 0 100px 40px #ffffff08;
+    top: -100%;
+    left: -100%;
+    transform: rotate(-45deg);
+    height:  60rem;
+    // width: 30rem;
+    // transition: .7s all;
+    background: transparent;
+    animation: offerslideIn 2.5s ease-in-out forwards;
+  }
+
+  @include desktop-small {
+    padding: 5rem 0;
+  }
+
+
+  .container {
+    display: flex;
+    @include padding(padding-lg);
+    justify-content: center;
+     
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      align-items: flex-start;
+      @include padding(padding-sm);
+    }
+
+    .offer-text {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      gap: 1.25rem;
+      padding: 64px 32px;
+      max-width: 100%;
+      border-radius: 32px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+
+      @include desktop-small {
+        padding: 64px 16px;
+        max-width: 100%;
+      }
+
+      .offer-title {
+        @include typography(display-lg,bold);
+
+      }
+
+      p {
+        @include typography(text-xl, regular);
+        max-width: 70%;
+        @include desktop-small {
+          max-width: 100%;
+        }
+
+      }
+
+      .button{
+        margin-top: 40px;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        padding: 16px 28px;
+        @include typography(text-xl,semibold);
+        background: var(--color-primary);
+        //color: var(--color-hero-button);
+
+        span {
+          color: var(--color-white);
+        }
+        svg {
+          path {
+            stroke: var(--color-white);
+          }
+        }
+      }
+      
+    }
+
+  }
+}
+
+
+@keyframes offerslideIn {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
+}

@@ -1,0 +1,28 @@
+{% set body_classes = "page-login" %}
+{% extends 'partials/base.html.twig' %}
+{% set image = page.media[page.header.media_order] %}
+
+{% block article %}
+
+	<div class="login-container">
+		<div class="login-section">
+			<div class="container ">
+				<div class="login-img-section">
+					<img src="{{ image.url }}" alt="login image"/>
+				</div>
+				{% embed "widgets/whq-card.html.twig" %}
+					{# {% block card_title %}
+										{{ page.content|raw }}
+										{% endblock %} #}
+
+					{% block card_content %}
+						{% include 'partials/notifications.html.twig' %}
+						{% include 'partials/messages.html.twig' %}
+
+						{% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}
+					{% endblock %}
+				{% endembed %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
