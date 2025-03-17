@@ -38,6 +38,11 @@ $text-color: white;
         animation-duration: 2s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
+        .count-up{
+            background: var(--color-white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         // flex: 1;
         gap: 1rem;
         &:nth-child(odd){
@@ -100,11 +105,15 @@ $text-color: white;
         .mini-card {
             flex: 40%;
             padding: 3rem;
+            background: linear-gradient(180deg, #5458D7 0%, #906DF9 100%);
         }
         @include desktop-small {
             .empty-box{
              display: none !important;
             }
+         }
+         .empty-box{
+            background: transparent;
          }
     }
 }

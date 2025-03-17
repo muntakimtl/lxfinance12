@@ -39,11 +39,7 @@
   }
 
   .contents-wrapper {
-    padding: 5rem 0;
 
-    @include desktop-small {
-      padding: 4rem 0;
-    }
 
     .header-content {
       text-align: center;
@@ -267,13 +263,6 @@
   }
 
 
-  .button {
-    @include desktop-small {
-      left: 5%;
-      bottom: 0% !important;
-    }
-
-  }
 
 
   .img-top-left {

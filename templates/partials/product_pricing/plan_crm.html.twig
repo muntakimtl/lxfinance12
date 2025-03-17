@@ -1,17 +1,21 @@
-
 <div class="pricing">
-	<div class="pricing-content">
-		{% include 'partials/product_pricing/widget/_recommended_tag.html.twig' %}
-		<div class="price">
-			{% include 'partials/product_pricing/widget/_package_title.html.twig' %}
+    <div class="pricing-content">
+      {% include 'partials/product_pricing/widget/_recommended_tag.html.twig' %}
+       <div class="price">
+          {% include 'partials/product_pricing/widget/_package_title.html.twig' %}
          <div class="price_icon-container">
 			<div class="price_icon">
-				<img class="icon" src="{{ url('theme://images/pricing-1.svg') }}"/>
+				<img class="icon" src="{{ url('theme://images/pricing-'~ packageKey ~ '.svg') }}" alt="icon">
 			</div>
          </div>
-			{% include 'partials/product_pricing/widget/_pricing_section.html.twig' %}
-		</div>
-		{% include 'partials/product_pricing/widget/_benefits.html.twig'  %}
-	</div>
-	{% include 'partials/product_pricing/widget/_signup_btn.html.twig'  %}
+          {% include 'partials/product_pricing/widget/_pricing_section.html.twig' %}
+       </div>
+       {% include 'partials/product_pricing/widget/_benefits.html.twig'  %}
+    </div>
+    {% include 'partials/product_pricing/widget/_signup_btn.html.twig'  %}
 </div>
+{# <script>
+   // Embed the product data as a JSON object
+   var output = {{ product| json_encode | raw }};
+   console.log('Product', output);
+</script> #}

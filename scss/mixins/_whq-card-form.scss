@@ -9,6 +9,7 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
     color: $text-color;
     max-width: 635px;
     margin-top: 20px;
+    border-bottom-left-radius: 0;
 
     @include mobile {
       margin-left: 1rem !important;

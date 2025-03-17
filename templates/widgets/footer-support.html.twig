@@ -1,0 +1,13 @@
+<div class="footer-menu">
+    <h4 class="title ">{{ "METRICALO.QUICK_LINKS"|t|upper }}</h4>
+    <div class="footer-menu-content">
+        {% for link in support_links %}
+            {% set link_page = pages.find(link) %}
+            {% if link_page %}
+                <div class="menu-item">
+                    <a rel="noopener noreferrer link-item" class="" href="{{ link_page.url }}">{{ link_page.menu }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

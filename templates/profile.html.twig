@@ -1,0 +1,64 @@
+{% set body_classes = 'bg-gray-50 profile-page' %}
+{% extends 'partials/base.html.twig' %}
+
+{% set userProfile = forms('user-profile') %}
+{% do userProfile.setAllData({
+  first_name: customer.data.first_name,
+  last_name: customer.data.last_name,
+  address: customer.data.address,
+  city: customer.data.city,
+  postcode: customer.data.postcode,
+  phone: customer.data.phone
+}) %}
+
+
+{% block content %}
+
+  {% include 'partials/no-hero-header.html.twig' with {
+    'title': page.header.title,
+    'links': [
+      {
+        'url': '/' ~ grav.language.getActive,
+        'title': "METRICALO.HOME"|t
+      },
+      {
+        'title': page.header.title
+      }
+    ]
+  } %}
+
+  {% include 'partials/messages.html.twig' %}
+  <div class="max-w-6xl mx-auto rounded-lg shadow-2xl shadow-gray-300 border border-gray-200 p-12 slide-up main-container">
+
+
+    <div class="content-section-profile container">
+
+      <div class="paragraph-column">
+        <h2 class="text-4xl font-bold mb-8 text-brand">
+          {{ 'METRICALO.PROFILE'|t }}
+        </h2>
+        {% include 'forms/form.html.twig' with { form: userProfile, action: '#' } %}
+        <div class="form-actions flex justify-between space-x-2">
+          <a href="{{ url(grav.language.getActive ~ '/profile/change-password') }}" class="button primary no-underline">
+            {{ 'METRICALO.CHANGE_PASSWORD'|t }}
+          </a>
+          <button form="user-profile" type="submit" class="button primary">
+            {{ 'METRICALO.EDIT_PROFILE'|t }}
+          </button>
+        </div>
+      </div>
+
+      <div class="paragraph-column">
+        <div class="mb-8">
+          <a class="btn btn__simple my-orders" href="{{ url(grav.language.getActive ~ '/profile/orders') }}">
+            {{ 'METRICALO.MY_ORDERS'|t }}{{ icon('arrow-right', 'h3 w-3 ml-1')|raw }}
+          </a>
+        </div>
+        <h2 class="text-4xl font-bold mb-8 text-brand">
+          {{ 'METRICALO.SUBSCRIPTION'|t }}
+        </h2>
+        {% include 'partials/subscription.html.twig' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,8 +1,14 @@
+.unsubscribe{
+  background: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--default-font-2);
+}
 .cancel-membership-section, .unsubscribe-section {
   background: var(--unsubscribe-bg-container);
   padding-top: 6.25rem;
   margin: 0;
   border-radius: 8px 8px 0px 0px;
+  
 
   @include whq-card-form(
           $text-color: var(--unsubscribe-text),

@@ -1,0 +1,8 @@
+<div class="benefits">
+    {% for benefit in product.all_benefits %}
+        <div class="benefit">
+        <img class="check" src="{{ url('theme://images/check.svg') }}" />
+        <div class="streamline">{{ benefit|markdown(false) }}</div>
+        </div>
+    {% endfor %}
+</div>

@@ -25,7 +25,22 @@ body {
   position: relative;
 
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--default-font-2) !important;
+  span{
+    font-family: var(--default-font-2) !important;
+    background: var(--color-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.form-data.basic-captcha .form-input-wrapper {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.form-data.basic-captcha .form-input-prepend, .form-data.basic-captcha input.form-input {
+  flex: 1;
+}
 
 .form-field input[type="text"],input[type="password"],input[type="email"],textarea {
   background: transparent !important;

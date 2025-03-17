@@ -7,6 +7,17 @@
   padding: 1.125rem 0;
   background: var(--panel-header-bg) !important;
   z-index: 99;
+  font-family: "Helvetica Neue";
+
+  .signup {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    border: 2px solid var(--color-primary, #5458D7);
+  }
 
 
   @include desktop-small {
@@ -126,7 +137,17 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-        border: 1px solid var(--color-primary);
+        padding: 12px 24px;
+        border-radius: 40px;
+    
+        /* Gradient border */
+        border: 1px solid #5458D7; 
+        // border-image: var(--color-primary);
+        // border-image-slice: 1;
+        min-width: 108px;
+
+        position: relative;
+        display: inline-block;
       }
 
       .language-switcher {

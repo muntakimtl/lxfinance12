@@ -1,0 +1,22 @@
+<div class="footer-menu">
+    <h4 class="title">{{ "METRICALO.FOOTER_LINKS"|t|upper }}</h4>
+    <div class="footer-menu-content">
+
+        {% for link in useful_links %}
+            {% if loop.index == 3 %}
+                <div class="menu-item">
+                    <a rel="noopener noreferrer" class="" href="/#modular_pricing">
+                        {{ homepage_content.pricing.translatable }}
+                    </a>
+                </div>
+            {% endif %}
+
+            {% set link_page = pages.find(link) %}
+            {% if link_page %}
+                <div class="menu-item">
+                    <a rel="noopener noreferrer link-item" class="" href="{{ link_page.url }}">{{ link_page.menu }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

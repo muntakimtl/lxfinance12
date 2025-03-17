@@ -1,11 +1,11 @@
 
 <div class="header-buttons {{ login_order }}">
-	{# {% if grav.user.authenticated %}
+	 {% if grav.user.authenticated %}
 		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
 	{% else %}
-		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
-		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
-	{% endif %} #}
+		<a class="{{navbar_button_style}} button btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
+	{% endif %}
+
 	{% if grav.language.enabled and grav.language.languages|count > 1 %}
 		<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal"><img class="frame-29 lang-flag" src="{{ url('theme://images/lang/'~grav.language.active~'.svg') }}">{{ grav.language.active|upper }}
 			<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewbox="0 0 8 5" fill="none">
