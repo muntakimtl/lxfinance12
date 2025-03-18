@@ -32,3 +32,11 @@
     }
   }
 }
+.unsubscribe-section{
+  font-family: var(--default-font-2);
+  background-color: var(--color-white);
+  .unsubscribe{
+    background-color: var(--color-secondary);
+    color: white;
+  }
+}

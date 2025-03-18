@@ -153,10 +153,11 @@ font-weight: 500;
         margin-top: -1.3rem;
         text-decoration: none;
         padding: 0;
+        border: none !important;
         @include typography(text-sm, semibold);
-        color: var(--login-text);
-        background-color: transparent !important;
-        background: transparent !important;
+        background: var(--color-primary) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
 
         &.button {
 
