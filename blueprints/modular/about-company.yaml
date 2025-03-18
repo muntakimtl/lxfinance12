@@ -86,6 +86,9 @@ form:
               type: text
               label: Button Text
               classes: 'translatable'
+            header.contents.button_link:
+              type: text
+              label: Button Link
 
             header.about_company_content_section:
               type: section

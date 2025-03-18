@@ -43,7 +43,7 @@ $text-color: white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        // flex: 1;
+        flex: 1;
         gap: 1rem;
         &:nth-child(odd){
             animation-name: bounceTopToBottom;

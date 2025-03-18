@@ -50,6 +50,10 @@
             border-radius: 32px 0 0 32px;
             text-align: center;
 
+            @include mobile{
+                border-bottom-left-radius: 0;
+            }
+
             .score-card{
                 h2{
                     @include typography(display-xxl, bold);

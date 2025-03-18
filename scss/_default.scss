@@ -37,6 +37,9 @@ h1,h2,h3,h4,h5,h6{
 .form-data.basic-captcha .form-input-wrapper {
   justify-content: space-between;
   flex-wrap: wrap;
+  @include mobile {
+    flex-direction: column !important;
+  }
 }
 .form-data.basic-captcha .form-input-prepend, .form-data.basic-captcha input.form-input {
   flex: 1;

@@ -2,9 +2,11 @@
   0% {
     box-shadow: 0 0 10px rgba(84, 88, 215, 0.5);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(144, 109, 249, 0.8);
   }
+
   100% {
     box-shadow: 0 0 10px rgba(84, 88, 215, 0.5);
   }
@@ -14,13 +16,16 @@
   0% {
     box-shadow: 0 0 5px rgba(144, 109, 249, 0.6);
   }
+
   50% {
     box-shadow: 0 0 15px rgba(84, 88, 215, 0.9);
   }
+
   100% {
     box-shadow: 0 0 5px rgba(144, 109, 249, 0.6);
   }
 }
+
 .pricings {
   display: flex;
   padding: 6.25rem 0;
@@ -159,14 +164,16 @@
           border-radius: 100px;
           padding: 16px;
           order: 2;
-          animation: glow 2s infinite alternate ease-in-out; /* Apply glowing effect */
+          animation: glow 2s infinite alternate ease-in-out;
+          /* Apply glowing effect */
 
 
           .price_icon {
             background: var(--color-primary-light);
             padding: 16px;
             border-radius: 50px;
-            animation: glow-inner 2s infinite alternate ease-in-out; /* Inner glow */
+            animation: glow-inner 2s infinite alternate ease-in-out;
+            /* Inner glow */
 
 
             img {
@@ -181,7 +188,10 @@
             }
           }
         }
-        .trial-days,.price.trial,.billed-days {
+
+        .trial-days,
+        .price.trial,
+        .billed-days {
           font-size: 20px;
           font-weight: 400 !important;
           color: var(--color-grey);
@@ -313,6 +323,11 @@
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
+            border-top: 1px solid #F0F2F4;
+
+            .streamline {
+              margin-top: 1rem;
+            }
 
             .check {
               transition: filter 1s ease-in-out;

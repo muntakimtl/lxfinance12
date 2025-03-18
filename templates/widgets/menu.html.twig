@@ -6,7 +6,7 @@
 
 			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
 				<div class="menu-item {{ current_page|e }}">
-					<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e }}">
+					<a class="menu-item__link {{navbar_text_color}}" href="{{ page.url|e  | replace({'%23': "#"}) }}">
 						{{ page.menu|e }}
 					</a>
 				</div>

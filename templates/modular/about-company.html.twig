@@ -105,7 +105,8 @@
 						<!-- Button -->
 
 						{% if module.button_text.translatable != null %}
-							<a href="{{ url(grav.language.getActive ~ '/contact') }}" class="button about-company-btn">
+			
+							<a href="{{ url(grav.language.getActive ~ module.button_link) }}" class="button about-company-btn">
 								{{ module.button_text.translatable }}
 							</a>
 						{% endif %}

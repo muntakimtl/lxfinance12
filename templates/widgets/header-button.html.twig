@@ -1,7 +1,6 @@
 
 <div class="header-buttons {{ login_order }}">
 	 {% if grav.user.authenticated %}
-		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
 	{% else %}
 		<a class="{{navbar_button_style}} button btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
 	{% endif %}
